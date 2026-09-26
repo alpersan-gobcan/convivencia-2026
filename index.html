@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convivencia Lúdica Deportiva 2026 - IES Santa Lucía</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #e0f2fe;
+            --accent: #38bdf8;
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --bg-color: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --base-font-size: 16px;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+            transition: font-size 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Toolbar styles */
+        .toolbar {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .toolbar button {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .toolbar button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            flex: 1 1 350px;
+            max-width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+        
+        .card.full-width {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            color: var(--text-dark);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card p, .card ul {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            text-align: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .color-item {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        .c-roja { background-color: #fee2e2; color: #991b1b; }
+        .c-azul { background-color: #dbeafe; color: #1e3a8a; }
+        .c-blanca { background-color: #f8fafc; color: #334155; }
+        .c-negra { background-color: #1e293b; color: #f8fafc; }
+        .c-verde { background-color: #dcfce7; color: #166534; }
+        .c-gris { background-color: #f1f5f9; color: #334155; }
+
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .img-clickable {
+            transition: opacity 0.2s;
+            cursor: zoom-in;
+        }
+        .img-clickable:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .header-content { flex-direction: column; text-align: center; }
+            .card { padding: 1.5rem; }
+        }
+
+        @media print {
+            .toolbar { display: none !important; }
+            header { position: static; box-shadow: none; border-bottom: 2px solid var(--primary); }
+            body { background-color: var(--white); }
+            .card { 
+                box-shadow: none; 
+                border: 1px solid #ccc; 
+                page-break-inside: avoid; 
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            .grid { gap: 1rem; display: block; }
+            .section-title { page-break-after: avoid; }
+            h2, h3 { page-break-after: avoid; }
+            a { text-decoration: none; color: inherit; }
+            .colors-grid { display: block; }
+            .color-item { display: inline-block; width: auto; margin: 0.2rem; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="toolbar">
+        <span>Tamaño de texto:</span>
+        <button onclick="changeFontSize(-1)">A-</button>
+        <button onclick="changeFontSize(1)">A+</button>
+        <button onclick="window.print()" style="margin-left: 1rem;">🖨️ Imprimir PDF</button>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <img src="logo-insti-entero2 mk3.jpg" alt="IES Santa Lucía" class="logo">
+            <div>
+                <h1>Convivencia Lúdica Deportiva</h1>
+                <div class="subtitle">Curso escolar 2026-2027 • 9 de Octubre de 2026</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <h2 class="section-title">Información General</h2>
+        <div class="grid">
+            <div class="card full-width">
+                <span class="card-icon">🎯</span>
+                <h2>Justificación y contextualización</h2>
+                <p>El <strong>IES Santa Lucía</strong> realiza la convivencia escolar con toda la comunidad de alumnado y docentes con actividades Lúdico Deportivas el <strong>viernes 9 de octubre de 2026</strong>.</p>
+                <p>La jornada se llevará a cabo en las instalaciones municipales del <strong>Estadio Municipal de Vecindario</strong>, en los Llanos (Balos). (<a href="https://maps.google.com/?q=Los+Llanos,+C.+la+Centrífuga,+S/N,+35110+Vecindario,+Las+Palmas" target="_blank" style="color: var(--primary);">Ver Mapa</a>)</p>
+                <p>Realizando dinámicas, actividades y acciones cuyo objetivo es mejorar las relaciones y la convivencia de toda nuestra comunidad educativa.</p>
+                <p>Creada por nuestro claustro, alumnado colaborador, y con la presencia de profesionales de club deportivos y empresas de eventos lúdicos de nuestra comunidad.</p>
+                <p>Y respaldados por el gabinete de seguridad, protección civil y policía local, los medios de comunicación municipales y las autoridades, concejalía de deportes y educación de nuestro ilustre Ayuntamiento de Santa Lucía de Tirajana.</p>
+                <img src="vista_area.png" alt="Vista Aérea del Estadio" style="width: 100%; max-width: 800px; border-radius: 8px; margin: 1rem auto; display: block; box-shadow: var(--shadow);">
+            </div>
+        </div>
+
+        <h2 class="section-title">Normas y Requisitos</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">📝</span>
+                <h2>Autorizaciones</h2>
+                <ul>
+                    <li>Las autorizaciones para la salida tendrán de <strong>plazo de entrega por parte del alumnado al tutor o tutora hasta el 2 de octubre</strong>.</li>
+                    <li>El <strong>5 de octubre</strong> el vicedirector recogerá las autorizaciones.</li>
+                    <li>El alumnado que no entregue dicha autorización <strong>no podrá acudir a dicha jornada</strong> y se deberá quedar en el centro realizando tareas (quizás elaborar algunas tareas para ese alumnado).</li>
+                </ul>
+                <div class="highlight">
+                    <p><strong>En ningún caso, y bajo ningún pretexto los tutores legales podrán ir a buscar al alumnado al Estadio Municipal.</strong> El alumnado sale del centro y vuelve al centro al terminar la jornada escolar.</p>
+                </div>
+                <p>Los horarios de la jornada escolar comprenden todas las franjas horarias del día señalado, de <strong>8:00 a 14:00 horas</strong>.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🎒</span>
+                <h2>Logística de la Jornada</h2>
+                <p>Para la jornada se requiere llevar:</p>
+                <ul>
+                    <li>Ropa de deportes y calzado de deportes.</li>
+                    <li>Gorra y protector solar.</li>
+                    <li>Agua.</li>
+                    <li>Bañador y toalla.</li>
+                    <li>Ropa de cambio.</li>
+                    <li>Desayuno.</li>
+                </ul>
+                <h3>Desayuno</h3>
+                <div class="highlight">
+                    <p>El alumnado y docente que precise del desayuno de la cafetería lo ha de <strong>reservar el día anterior a la jornada</strong>.<br>
+                    Recogiendo la talega a las <strong>8:00 horas</strong> del día de la jornada.</p>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <span class="card-icon">👕</span>
+                <h2>Ropa Identificativa</h2>
+                <div class="grid" style="gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <h3>Personal y Docentes</h3>
+                        <ul>
+                            <li><strong>Monitores DAMASI:</strong> Vestimenta de empresa</li>
+                            <li><strong>Monitores UAVA:</strong> Vestimenta del club</li>
+                            <li><strong>Docentes:</strong> Chalecos Reflectantes</li>
+                            <li><strong>Alumnado colaborador:</strong> Insignias</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Alumnado por niveles (Camisetas)</h3>
+                        <div class="colors-grid">
+                            <div class="color-item c-roja">1º ESO<br>Roja</div>
+                            <div class="color-item c-azul">2º ESO y A.E.<br>Azul</div>
+                            <div class="color-item c-blanca">3º ESO<br>Blanca</div>
+                            <div class="color-item c-negra">4º ESO<br>Negra</div>
+                            <div class="color-item c-verde">1º BACH<br>Verde</div>
+                            <div class="color-item c-gris">2º BACH<br>Camiseta</div>
+                            <div class="color-item c-gris">CICLOS<br>Camiseta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Organización en el Estadio</h2>
+        <div class="grid">
+            <div class="card full-width">
+                <span class="card-icon">🏟️</span>
+                <h2>Lugar de la convivencia (Foto/ Zonas/ Guardias)</h2>
+                <p>El estadio estará dividido en dos grandes Áreas (1 y 2). En cada área se desarrollarán las diferentes actividades, que tendrán un cuadrante por niveles (ver anexo de área). El recinto contará con:</p>
+                <ul>
+                    <li>Áreas y Estaciones deportivas.</li>
+                    <li>Zonas de descanso.</li>
+                    <li>Zonas de seguridad (botiquín).</li>
+                    <li>Zona punto de hidratación y Zona fruta.</li>
+                    <li>Carpas, Baños y Gradas.</li>
+                </ul>
+                <img src="zonas_estadio.png" alt="Zonas del Estadio" style="width: 100%; max-width: 600px; border-radius: 8px; margin: 1rem auto; display: block; box-shadow: var(--shadow);">
+                
+                <h3>Acomodación y Funciones</h3>
+                <p>Al llegar al Estadio Municipal de Vecindario, los compañeros/as del DAC se encargan de acomodar y distribuir a los grupos. Se pondrán etiquetas que identifican a cada nivel.</p>
+                <p><strong>Los docentes tendrán funciones en el recinto:</strong> guardias rotativas, ayudar y participar en las dinámicas de las actividades, ayudar a los monitores del UAVA, Damasi y el DAC. Todas estas funciones irán rotando para que todos los docentes puedan disfrutar de esta jornada de convivencia.</p>
+                <p><strong>Se establecerán puestos de guardia</strong> para controlar los baños, la puerta de acceso al recinto, así como las zonas no transitables del recinto.</p>
+
+                <h3>Dinamización de la Jornada</h3>
+                <ul>
+                    <li><strong>UAVA</strong> (Unión Atlética Vecindario y Agüimes): Salto de longitud, pértiga, relevo, etc.</li>
+                    <li><strong>Docentes:</strong> Juegos tradicionales, Carrera de Saco, Pañuelito, Cuerda, briley, etc.</li>
+                    <li><strong>DAMASI:</strong> Hinchables acuáticos.</li>
+                    <li><strong>Alumnado colaborador.</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Distribución y Horarios</h2>
+        <div class="grid">
+            
+            <div class="card full-width">
+                <span class="card-icon">🏫</span>
+                <h2>Distribución de los grupos para la salida</h2>
+                <ul>
+                    <li>A las <strong>8:00 horas</strong> los grupos suben al aula grupo, el dia de la jornada no habrá optativa (los docente que imparten optativas se les asignará el grupo acudir) el docente los recibe y pasa lista.</li>
+                    <li>Se entregará al docente de 1º Hora la lista del alumnado (dos copias) que ha entregado la autorización, si encuentra alumnado que no ha entregado autorización, lo deriva a la zona habilitada en el centro.</li>
+                    <li>Se dejará una copia en el tablón de anuncios de vicedirección y la otra se la lleva el docente que acompaña al grupo a la salida.</li>
+                </ul>
+                
+                <h3 style="margin-top: 1.5rem;">Docentes Acompañantes</h3>
+                <p>(Ver anexo de cuadrante). Salvo excepción, los docentes que acompañan a los grupos serán los docentes que tienen más horas lectivas en el día de la Jornada.</p>
+                <p>El docente que acompaña debe de estar en la zona de salida y con el grupo asignado a la hora y lugar establecido en el anexo cuadrante.</p>
+                <p>En la cabecera de la salida se asignará un docente conocedor del trayecto, que ira identificado con el chaleco reflectante.</p>
+            </div>
+            
+            <div class="card full-width" style="text-align: center;">
+                <span class="card-icon">🗺️</span>
+                <h2>Recorrido al Estadio</h2>
+                <p style="font-size: 0.9em; color: var(--text-light); margin-bottom: 1rem;">(Haz clic en la imagen para verla en grande)</p>
+                <a href="recorrido.png" target="_blank">
+                    <img src="recorrido.png" alt="Mapa del Recorrido al Estadio" class="img-clickable" style="width: 100%; max-width: 800px; border-radius: 8px; margin: 0 auto; display: block; box-shadow: var(--shadow);">
+                </a>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🚶</span>
+                <h2>Salida Escalonada - Grupo A</h2>
+                <p><strong>Niveles:</strong> 1º ESO; 3º ESO; 1º BACH; 1º Ciclos</p>
+                <ul>
+                    <li><strong>8:20 horas:</strong> Baja a las canchas y se agrupan por grupos y niveles según se muestra en la imagen.</li>
+                    <li><strong>8:30 horas:</strong> Salen del centro con los docentes acompañantes realizando el recorrido en dirección al Estadio Municipal de Vecindario.</li>
+                    <li><strong>9:00 horas:</strong> Llegada al Estadio Municipal de Vecindario. Recibimiento y acomodo.</li>
+                </ul>
+                <img src="GrupoA_salida.png" alt="Canchas Grupo A" style="width: 100%; border-radius: 8px; margin-top: 1rem; box-shadow: var(--shadow);">
+                
+                <h3 style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">Regreso - Grupo A</h3>
+                <ul>
+                    <li><strong>13:00 horas:</strong> Salida del Estadio con los docentes acompañantes realizando el recorrido en dirección al IES Santa Lucía.</li>
+                    <li><strong>13:30 horas:</strong> Llegada al IES Santa Lucía. Recibimiento y acomodo en las canchas o mesas del jardín.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🚶‍♂️</span>
+                <h2>Salida Escalonada - Grupo B</h2>
+                <p><strong>Niveles:</strong> 2º ESO; Aula ENCLAVE; 4º ESO; 2º BACH; 2º Ciclos</p>
+                <ul>
+                    <li><strong>8:35 horas:</strong> Baja a las canchas y se agrupan por grupos y niveles según se muestra en la imagen.</li>
+                    <li><strong>8:45 horas:</strong> Salen del centro con los docentes acompañantes realizando el recorrido en dirección al Estadio Municipal de Vecindario.</li>
+                    <li><strong>9:15 horas:</strong> Llegada al Estadio Municipal de Vecindario. Recibimiento y acomodo.</li>
+                </ul>
+                <img src="GrupoB_salida.png" alt="Canchas Grupo B" style="width: 100%; border-radius: 8px; margin-top: 1rem; box-shadow: var(--shadow);">
+
+                <h3 style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">Regreso - Grupo B</h3>
+                <ul>
+                    <li><strong>13:10 horas:</strong> Salida del Estadio con los docentes acompañantes realizando el recorrido en dirección al IES Santa Lucía.</li>
+                    <li><strong>13:40 horas:</strong> Llegada al IES Santa Lucía. Recibimiento y acomodo en las canchas o mesas del jardín.</li>
+                </ul>
+            </div>
+
+            <div class="card full-width">
+                <div class="highlight">
+                    <p><strong>Para la salida del Estadio Municipal de Vecindario todo el alumnado debe de estar sentado en las gradas a las 12:45 horas.</strong> Preparándose para el regreso. Se agrupan por grupos y niveles.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>Convivencia Lúdica Deportiva 2026-2027 - IES Santa Lucía</strong></p>
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 0.9rem; color: #cbd5e1; flex-wrap: wrap;">
+            <div>
+                <strong>Autoridades:</strong><br>
+                Concejal de deportes (Don Julio Ojeda)<br>
+                Concejal de Educación (Don Mario Bordon)<br>
+                Alcalde (Don Francisco José García López)
+            </div>
+            <div>
+                <strong>Medios de comunicación:</strong><br>
+                EsteCanal TV<br>
+                Radio Tagoror
+            </div>
+            <div>
+                <strong>Seguridad:</strong><br>
+                Protección Civil<br>
+                Policía Local
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentFontSize = 16;
+        function changeFontSize(change) {
+            currentFontSize += change;
+            // Prevent text from getting too tiny or too huge
+            if (currentFontSize < 12) currentFontSize = 12;
+            if (currentFontSize > 24) currentFontSize = 24;
+            document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+        }
+    </script>
+</body>
+</html>
