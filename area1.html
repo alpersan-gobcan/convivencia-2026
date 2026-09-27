@@ -7,10 +7,9 @@
     <style>
         :root {
             --primary: #0056b3;
-            --secondary: #e0f2fe;
             --text-dark: #1e293b;
             --white: #ffffff;
-            --border: #e2e8f0;
+            --border: #cbd5e1;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -23,26 +22,55 @@
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
         th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
         th { background-color: var(--primary); color: var(--white); }
-        tr:hover { background-color: #f1f5f9; }
         .btn-back { display: inline-block; margin-bottom: 2rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .btn-back:hover { background: #004494; }
         .recreo-row { background-color: #fed7aa !important; font-weight: bold; text-align: center; }
         .zumba-row { background-color: #fbcfe8 !important; font-weight: bold; text-align: center; }
+        [data-group="1ºA ESO"] { background-color: #dcfce7; }
+        [data-group="1ºB ESO"] { background-color: #ccfbf1; }
+        [data-group="1ºC ESO"] { background-color: #e0e7ff; }
+        [data-group="1ºD ESO"] { background-color: #fce7f3; }
+        [data-group="1º ESO (Todos)"] { background-color: #f1f5f9; }
+        [data-group="2ºA ESO Aula Enclave"] { background-color: #fef3c7; }
+        [data-group="2ºB ESO"] { background-color: #ffedd5; }
+        [data-group="2ºC ESO"] { background-color: #fee2e2; }
+        [data-group="2ºD ESO"] { background-color: #f3e8ff; }
+        [data-group="2º ESO Aula Enclave (Todos)"] { background-color: #f1f5f9; }
+        [data-group="3ºA ESO"] { background-color: #e0f2fe; }
+        [data-group="3ºB ESO"] { background-color: #dbeafe; }
+        [data-group="3ºC ESO"] { background-color: #fae8ff; }
+        [data-group="3ºD ESO"] { background-color: #fef08a; }
+        [data-group="3ºE ESO"] { background-color: #bbf7d0; }
+        [data-group="3º ESO (Todos)"] { background-color: #f1f5f9; }
+
     </style>
 </head>
 <body>
     <a href="index.html" class="btn-back">← Volver al inicio</a>
-    <h1>Cuadrante Área 1</h1>
+    <h1>Cuadrante Área 1 - Convivencia Lúdica</h1>
     <div class="subtitle">1º, 2º, 3º ESO y Aula Enclave</div>
     
     <div class="filter-container">
-        <label for="courseFilter" style="font-weight: bold;">Filtrar por curso:</label>
+        <label for="courseFilter" style="font-weight: bold;">Filtrar por grupo/subgrupo:</label>
         <select id="courseFilter" onchange="filterTable()">
             <option value="all">Mostrar Todos</option>
-            <option value="1º eso">1º ESO</option>
-            <option value="2º eso">2º ESO</option>
-            <option value="3º eso">3º ESO</option>
-            <option value="aula enclave">Aula Enclave</option>
+            <option value="1ºa eso">1ºA ESO</option>
+            <option value="1ºb eso">1ºB ESO</option>
+            <option value="1ºc eso">1ºC ESO</option>
+            <option value="1ºd eso">1ºD ESO</option>
+            <option value="1º eso (todos)">1º ESO (Todos)</option>
+            <option value="2ºa eso + aula enclave">2ºA ESO + Aula Enclave</option>
+            <option value="2ºb eso">2ºB ESO</option>
+            <option value="2ºc eso">2ºC ESO</option>
+            <option value="2ºd eso">2ºD ESO</option>
+            <option value="2º eso + aula enclave (todos)">2º ESO + Aula Enclave (Todos)</option>
+            <option value="3ºa eso">3ºA ESO</option>
+            <option value="3ºb eso">3ºB ESO</option>
+            <option value="3ºc eso">3ºC ESO</option>
+            <option value="3ºd eso">3ºD ESO</option>
+            <option value="3ºe eso">3ºE ESO</option>
+            <option value="3º eso (todos)">3º ESO (Todos)</option>
+
         </select>
     </div>
 
@@ -57,46 +85,170 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-group="1ºA ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">9:30 - 10:15 h</td><td><strong>1ºA ESO</strong></td><td>Salto de comba (9:30-9:50) <br> El pañuelito (9:50-10:15)</td><td>Elena</td></tr>
-                <tr data-group="1ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>1ºB ESO</strong></td><td>Lanzamiento (9:30-9:50) <br> Brile (9:50-10:15)</td><td>UAVA</td></tr>
-                <tr data-group="1ºC ESO" style="border-bottom: 2px solid #ccc;"><td rowspan="2" style="border-bottom: 2px solid #ccc;">9:30 - 10:15 h</td><td><strong>1ºC ESO</strong></td><td>Carrera de saco (9:30-9:50) <br> Salto Longitud (9:50-10:15)</td><td>UAVA</td></tr>
-                <tr data-group="1ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>1ºD ESO</strong></td><td>Juego de palabras (9:30-9:50) <br> Salto de comba (9:50-10:15)</td><td></td></tr>
-                
-                <tr data-group="2ºA ESO Aula Enclave"><td rowspan="2" style="border-bottom: 2px solid #ccc;">9:30 - 10:15 h</td><td><strong>2ºA ESO + Aula Enclave</strong></td><td>El pañuelito (9:30-9:50) <br> Salto de comba (9:50-10:15)</td><td>Raúl / Samira</td></tr>
-                <tr data-group="2ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>2ºB ESO</strong></td><td>Brile (9:30-9:50) <br> Lanzamiento (9:50-10:15)</td><td>Coralia / UAVA</td></tr>
-                <tr data-group="2ºC ESO" style="border-bottom: 2px solid #ccc;"><td rowspan="2" style="border-bottom: 2px solid #ccc;">9:30 - 10:15 h</td><td><strong>2ºC ESO</strong></td><td>Salto Longitud (9:30-9:50) <br> Carrera de saco (9:50-10:15)</td><td>UAVA / Coralia</td></tr>
-                <tr data-group="2ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>2ºD ESO</strong></td><td>Salto de comba (9:30-9:50) <br> Juego de palabras (9:50-10:15)</td><td></td></tr>
-
-                <tr data-group="3º ESO" style="border-bottom: 2px solid var(--primary);"><td style="border-bottom: 2px solid var(--primary);">9:30 - 10:15 h</td><td><strong>3º ESO (Todos)</strong></td><td>Hinchables acuáticos</td><td>DAMASI / Miguel</td></tr>
-
+                <tr data-group="1ºA ESO">
+                    <td rowspan="2">9:30 - 10:15 h</td>
+                    <td><strong>1ºA ESO</strong></td>
+                    <td>Salto de comba (9:30-9:50) <br> El pañuelito (9:50-10:15)</td>
+                    <td>Elena</td>
+                </tr>
+                <tr data-group="1ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>1ºB ESO</strong></td>
+                    <td>Lanzamiento (9:30-9:50) <br> Brile (9:50-10:15)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="1ºC ESO">
+                    <td rowspan="2">9:30 - 10:15 h</td>
+                    <td><strong>1ºC ESO</strong></td>
+                    <td>Carrera de saco (9:30-9:50) <br> Salto Longitud (9:50-10:15)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="1ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>1ºD ESO</strong></td>
+                    <td>Juego de palabras (9:30-9:50) <br> Salto de comba (9:50-10:15)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="2ºA ESO Aula Enclave">
+                    <td rowspan="2">9:30 - 10:15 h</td>
+                    <td><strong>2ºA ESO + Aula Enclave</strong></td>
+                    <td>El pañuelito (9:30-9:50) <br> Salto de comba (9:50-10:15)</td>
+                    <td>Raúl / Samira</td>
+                </tr>
+                <tr data-group="2ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>2ºB ESO</strong></td>
+                    <td>Brile (9:30-9:50) <br> Lanzamiento (9:50-10:15)</td>
+                    <td>Coralia / UAVA</td>
+                </tr>
+                <tr data-group="2ºC ESO">
+                    <td rowspan="2">9:30 - 10:15 h</td>
+                    <td><strong>2ºC ESO</strong></td>
+                    <td>Salto Longitud (9:30-9:50) <br> Carrera de saco (9:50-10:15)</td>
+                    <td>UAVA / Coralia</td>
+                </tr>
+                <tr data-group="2ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>2ºD ESO</strong></td>
+                    <td>Salto de comba (9:30-9:50) <br> Juego de palabras (9:50-10:15)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="3º ESO (Todos)" style="border-bottom: 2px solid #64748b;">
+                    <td>9:30 - 10:15 h</td>
+                    <td><strong>3º ESO (Todos)</strong></td>
+                    <td>Hinchables acuáticos</td>
+                    <td>DAMASI / Miguel</td>
+                </tr>
                 <tr class="recreo-row" data-group="all"><td colspan="4">10:15 - 10:45 h - RECREO</td></tr>
                 <tr class="zumba-row" data-group="all" style="border-bottom: 2px solid var(--primary);"><td colspan="4">10:30 - 11:00 h - ZUMBA</td></tr>
-
-                <tr data-group="1ºA ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:00 - 11:40 h</td><td><strong>1ºA ESO</strong></td><td>Lanzamiento (11:00-11:20) <br> Brile (11:20-11:40)</td><td>UAVA</td></tr>
-                <tr data-group="1ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>1ºB ESO</strong></td><td>Carrera de Saco (11:00-11:20) <br> Salto Longitud (11:20-11:40)</td><td>UAVA</td></tr>
-                <tr data-group="1ºC ESO" style="border-bottom: 2px solid #ccc;"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:00 - 11:40 h</td><td><strong>1ºC ESO</strong></td><td>Juego de palabras (11:00-11:20) <br> Salto de comba (11:20-11:40)</td><td>Elena</td></tr>
-                <tr data-group="1ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>1ºD ESO</strong></td><td>Pañuelito (11:00-11:20) <br> Lanzamiento (11:20-11:40)</td><td>UAVA</td></tr>
-
-                <tr data-group="2º ESO Aula Enclave" style="border-bottom: 2px solid #ccc;"><td>11:00 - 11:40 h</td><td><strong>2º ESO + Aula Enclave (Todos)</strong></td><td>Hinchables Acuáticos</td><td>Damasi / Raúl, Samira, Coralia</td></tr>
-
-                <tr data-group="3ºA ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:00 - 11:40 h</td><td><strong>3ºA ESO</strong></td><td>Salto de comba (11:00-11:20) <br> El pañuelito (11:20-11:40)</td><td></td></tr>
-                <tr data-group="3ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>3ºB ESO</strong></td><td>Brile (11:00-11:20) <br> Lanzamiento (11:20-11:40)</td><td>UAVA</td></tr>
-                <tr data-group="3ºC ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:00 - 11:40 h</td><td><strong>3ºC ESO</strong></td><td>Carrera de saco (11:00-11:20) <br> Salto Longitud (11:20-11:40)</td><td>Miguel / UAVA</td></tr>
-                <tr data-group="3ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>3ºD ESO</strong></td><td>Salto de comba (11:00-11:20) <br> Juego de palabras (11:20-11:40)</td><td></td></tr>
-                <tr data-group="3ºE ESO" style="border-bottom: 2px solid var(--primary);"><td style="border-bottom: 2px solid var(--primary);">11:00 - 11:40 h</td><td><strong>3ºE ESO</strong></td><td>Lanzamiento (11:00-11:20) <br> El pañuelito (11:20-11:40)</td><td>UAVA</td></tr>
-
-                <tr data-group="1º ESO" style="border-bottom: 2px solid #ccc;"><td>11:45 - 12:30 h</td><td><strong>1º ESO (Todos)</strong></td><td>Hinchables Acuáticos</td><td>Damasi / Elena</td></tr>
-
-                <tr data-group="2ºA ESO Aula Enclave"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:45 - 12:30 h</td><td><strong>2ºA ESO + Aula Enclave</strong></td><td>Lanzamiento (11:45-12:05) <br> Braile (12:05-12:30)</td><td>UAVA/Raúl / Samira</td></tr>
-                <tr data-group="2ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>2ºB ESO</strong></td><td>Carrera de Saco (11:45-12:05) <br> Salto Longitud (12:05-12:30)</td><td>Coralia / UAVA</td></tr>
-                <tr data-group="2ºC ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:45 - 12:30 h</td><td><strong>2ºC ESO</strong></td><td>Juego de palabras (11:45-12:05) <br> Salto Comba (12:05-12:30)</td><td></td></tr>
-                <tr data-group="2ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>2ºD ESO</strong></td><td>El pañuelito (11:45-12:05) <br> Lanzamiento (12:05-12:30)</td><td>UAVA</td></tr>
-
-                <tr data-group="3ºA ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:45 - 12:30 h</td><td><strong>3ºA ESO</strong></td><td>Braile (11:45-12:05) <br> Lanzamiento (12:05-12:30)</td><td>UAVA</td></tr>
-                <tr data-group="3ºB ESO" style="border-bottom: 2px solid #ccc;"><td><strong>3ºB ESO</strong></td><td>Salto Longitud (11:45-12:05) <br> Carrera de Saco (12:05-12:30)</td><td>UAVA</td></tr>
-                <tr data-group="3ºC ESO"><td rowspan="2" style="border-bottom: 2px solid #ccc;">11:45 - 12:30 h</td><td><strong>3ºC ESO</strong></td><td>Salto Comba (11:45-12:05) <br> Juego de palabras (12:05-12:30)</td><td></td></tr>
-                <tr data-group="3ºD ESO" style="border-bottom: 2px solid #ccc;"><td><strong>3ºD ESO</strong></td><td>Lanzamiento (11:45-12:05) <br> El pañuelito (12:05-12:30)</td><td>UAVA / Miguel</td></tr>
-                <tr data-group="3ºE ESO" style="border-bottom: 2px solid #ccc;"><td>11:45 - 12:30 h</td><td><strong>3ºE ESO</strong></td><td>Baile (11:45-12:05) <br> Carrera de Saco (12:05-12:30)</td><td></td></tr>
+                <tr data-group="1ºA ESO">
+                    <td rowspan="2">11:00 - 11:40 h</td>
+                    <td><strong>1ºA ESO</strong></td>
+                    <td>Lanzamiento (11:00-11:20) <br> Brile (11:20-11:40)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="1ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>1ºB ESO</strong></td>
+                    <td>Carrera de Saco (11:00-11:20) <br> Salto Longitud (11:20-11:40)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="1ºC ESO">
+                    <td rowspan="2">11:00 - 11:40 h</td>
+                    <td><strong>1ºC ESO</strong></td>
+                    <td>Juego de palabras (11:00-11:20) <br> Salto de comba (11:20-11:40)</td>
+                    <td>Elena</td>
+                </tr>
+                <tr data-group="1ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>1ºD ESO</strong></td>
+                    <td>Pañuelito (11:00-11:20) <br> Lanzamiento (11:20-11:40)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="2º ESO Aula Enclave (Todos)" style="border-bottom: 2px solid #64748b;">
+                    <td>11:00 - 11:40 h</td>
+                    <td><strong>2º ESO + Aula Enclave (Todos)</strong></td>
+                    <td>Hinchables Acuáticos</td>
+                    <td>Damasi / Raúl, Samira, Coralia</td>
+                </tr>
+                <tr data-group="3ºA ESO">
+                    <td rowspan="2">11:00 - 11:40 h</td>
+                    <td><strong>3ºA ESO</strong></td>
+                    <td>Salto de comba (11:00-11:20) <br> El pañuelito (11:20-11:40)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="3ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>3ºB ESO</strong></td>
+                    <td>Brile (11:00-11:20) <br> Lanzamiento (11:20-11:40)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="3ºC ESO">
+                    <td rowspan="2">11:00 - 11:40 h</td>
+                    <td><strong>3ºC ESO</strong></td>
+                    <td>Carrera de saco (11:00-11:20) <br> Salto Longitud (11:20-11:40)</td>
+                    <td>Miguel / UAVA</td>
+                </tr>
+                <tr data-group="3ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>3ºD ESO</strong></td>
+                    <td>Salto de comba (11:00-11:20) <br> Juego de palabras (11:20-11:40)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="3ºE ESO" style="border-bottom: 2px solid #64748b;">
+                    <td>11:00 - 11:40 h</td>
+                    <td><strong>3ºE ESO</strong></td>
+                    <td>Lanzamiento (11:00-11:20) <br> El pañuelito (11:20-11:40)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="1º ESO (Todos)" style="border-bottom: 2px solid #64748b;">
+                    <td>11:45 - 12:30 h</td>
+                    <td><strong>1º ESO (Todos)</strong></td>
+                    <td>Hinchables Acuáticos</td>
+                    <td>Damasi / Elena</td>
+                </tr>
+                <tr data-group="2ºA ESO Aula Enclave">
+                    <td rowspan="2">11:45 - 12:30 h</td>
+                    <td><strong>2ºA ESO + Aula Enclave</strong></td>
+                    <td>Lanzamiento (11:45-12:05) <br> Braile (12:05-12:30)</td>
+                    <td>UAVA/Raúl / Samira</td>
+                </tr>
+                <tr data-group="2ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>2ºB ESO</strong></td>
+                    <td>Carrera de Saco (11:45-12:05) <br> Salto Longitud (12:05-12:30)</td>
+                    <td>Coralia / UAVA</td>
+                </tr>
+                <tr data-group="2ºC ESO">
+                    <td rowspan="2">11:45 - 12:30 h</td>
+                    <td><strong>2ºC ESO</strong></td>
+                    <td>Juego de palabras (11:45-12:05) <br> Salto Comba (12:05-12:30)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="2ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>2ºD ESO</strong></td>
+                    <td>El pañuelito (11:45-12:05) <br> Lanzamiento (12:05-12:30)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="3ºA ESO">
+                    <td rowspan="2">11:45 - 12:30 h</td>
+                    <td><strong>3ºA ESO</strong></td>
+                    <td>Braile (11:45-12:05) <br> Lanzamiento (12:05-12:30)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="3ºB ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>3ºB ESO</strong></td>
+                    <td>Salto Longitud (11:45-12:05) <br> Carrera de Saco (12:05-12:30)</td>
+                    <td>UAVA</td>
+                </tr>
+                <tr data-group="3ºC ESO">
+                    <td rowspan="2">11:45 - 12:30 h</td>
+                    <td><strong>3ºC ESO</strong></td>
+                    <td>Salto Comba (11:45-12:05) <br> Juego de palabras (12:05-12:30)</td>
+                    <td></td>
+                </tr>
+                <tr data-group="3ºD ESO" style="border-bottom: 2px solid #64748b;">
+                    <td><strong>3ºD ESO</strong></td>
+                    <td>Lanzamiento (11:45-12:05) <br> El pañuelito (12:05-12:30)</td>
+                    <td>UAVA / Miguel</td>
+                </tr>
+                <tr data-group="3ºE ESO" style="border-bottom: 2px solid #64748b;">
+                    <td>11:45 - 12:30 h</td>
+                    <td><strong>3ºE ESO</strong></td>
+                    <td>Baile (11:45-12:05) <br> Carrera de Saco (12:05-12:30)</td>
+                    <td></td>
+                </tr>
 
             </tbody>
         </table>
@@ -113,6 +265,17 @@
                     row.style.display = '';
                 } else if (group.includes(filter)) {
                     row.style.display = '';
+                } else if (filter.includes('todos') || group.includes('todos')) {
+                    // Si el filtro engloba (ej: 1º ESO Todos) y la fila es 1ºA, mostramos si coincide el nivel
+                    const filterNivel = filter.split(' ')[0]; // ej: '1º'
+                    if (group.includes(filterNivel) && filter.includes('todos')) {
+                        row.style.display = '';
+                    } else if (group.includes('todos') && filter.includes(group.split(' ')[0])) {
+                        row.style.display = '';
+                    }
+                    else {
+                        row.style.display = 'none';
+                    }
                 } else {
                     row.style.display = 'none';
                 }
