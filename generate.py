@@ -294,7 +294,7 @@ area2_data = [
     {'time': '9:30 - 10:15 h', 'group': '2º B BACH', 'group_display': '2º B BACH', 'activity': ['Brile (9:30-9:50)', 'Lanzamiento (9:50-10:15)'], 'monitor': ['DIEGO', 'UAVA'], 'ayudante': ['VICKY', ''], 'obs': obs_general},
     {'time': '9:30 - 10:15 h', 'group': '2º C BACH', 'group_display': '2º C BACH', 'activity': ['Salto Longitud (9:30-9:50)', 'Carrera de saco (9:50-10:15)'], 'monitor': ['UAVA', 'Davinia'], 'ayudante': ['', ''], 'obs': obs_general, 'end_block': True},
 
-    {'time': '9:30 - 10:15 h', 'group': 'CICLOS', 'group_display': 'CICLOS', 'activity': ['Salto de comba (9:30-9:50)', 'Juego de palabras (9:50-10:15)'], 'monitor': ['Almudena', 'ORLANDO R.'], 'ayudante': ['', 'ANA MATA'], 'obs': obs_general, 'end_block': True},
+    {'time': '9:30 - 10:15 h', 'group': 'CICLOS', 'group_display': 'CICLOS', 'activity': ['Salto de comba (9:30-9:50)', 'Juego de palabras (9:50-10:15)'], 'monitor': ['Almudena', 'ORLANDO R.'], 'ayudante': ['', ''], 'obs': obs_general, 'end_block': True},
 
     {'time': '9:30 - 10:15 h', 'group': '4º ESO (Todos)', 'group_display': '4º ESO (Todos)', 'activity': ['Hinchables acuáticos'], 'monitor': ['DAMASI/'], 'ayudante': ['Jose Fran (Docente)'], 'obs': 'Ayudar al monitor de DAMASI y mojarte.<br>Que se quiera mojarse que contacte con Jose Fran para cubrir su función', 'end_block': True},
 
@@ -302,27 +302,27 @@ area2_data = [
     {'type': 'zumba'},
 
     # 11:00 - 11:40
-    {'time': '11:00 - 11:40 h', 'group': '1º A BACH', 'group_display': '1º A BACH', 'activity': ['Lanzamiento (11:00-11:20)', 'Brile (11:20-11:40)'], 'monitor': ['UAVA', 'DIEGO'], 'ayudante': ['', 'VICKY'], 'obs': obs_general},
+    {'time': '11:00 - 11:40 h', 'group': '1º A BACH', 'group_display': '1º A BACH', 'activity': ['Lanzamiento (11:00-11:20)', 'Brile (11:20-11:40)'], 'monitor': ['UAVA', 'DIEGO'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:00 - 11:40 h', 'group': '1º B BACH', 'group_display': '1º B BACH', 'activity': ['Carrera de Saco (11:00-11:20)', 'Salto Longitud (11:20-11:40)'], 'monitor': ['Davinia', 'UAVA'], 'ayudante': ['Jose Fran', ''], 'obs': obs_general},
     {'time': '11:00 - 11:40 h', 'group': '1º C BACH', 'group_display': '1º C BACH', 'activity': ['Juego de palabras (11:00-11:20)', 'Salto de comba (11:20-11:40)'], 'monitor': ['ORLANDO R.', 'Almudena'], 'ayudante': ['ANA MATA', ''], 'obs': obs_general, 'end_block': True},
 
     {'time': '11:00 - 11:40 h', 'group': '2º BACH + CICLOS', 'group_display': '2º BACH + CICLOS', 'activity': ['Hinchables Acuáticos'], 'monitor': ['Damasi'], 'ayudante': ['Docente que se quiera mojar'], 'obs': 'Ayudar al monitor de DAMASI y mojarte.<br>Contactar con Jose Fran para cubrir su función', 'end_block': True},
 
     {'time': '11:00 - 11:40 h', 'group': '4ºA ESO', 'group_display': '4ºA ESO', 'activity': ['Salto de comba (11:00-11:20)', 'El pañuelito (11:20-11:40)'], 'monitor': ['Almudena', 'PAULA'], 'ayudante': ['', 'ROSI'], 'obs': obs_general},
-    {'time': '11:00 - 11:40 h', 'group': '4ºB ESO', 'group_display': '4ºB ESO', 'activity': ['Brile (11:00-11:20)', 'Lanzamiento (11:20-11:40)'], 'monitor': ['DIEGO', 'UAVA'], 'ayudante': ['VICKY', ''], 'obs': obs_general},
+    {'time': '11:00 - 11:40 h', 'group': '4ºB ESO', 'group_display': '4ºB ESO', 'activity': ['Brile (11:00-11:20)', 'Lanzamiento (11:20-11:40)'], 'monitor': ['DIEGO', 'UAVA'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:00 - 11:40 h', 'group': '4ºC ESO', 'group_display': '4ºC ESO', 'activity': ['Carrera de saco (11:00-11:20)', 'Salto Longitud (11:20-11:40)'], 'monitor': ['Davinia', 'UAVA'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:00 - 11:40 h', 'group': '4ºD ESO', 'group_display': '4ºD ESO', 'activity': ['Salto de comba (11:00-11:20)', 'Juego de palabras (11:20-11:40)'], 'monitor': ['Almudena', 'ORLANDO R.'], 'ayudante': ['', 'ANA MATA'], 'obs': obs_general, 'end_block': True},
 
     # 11:45 - 12:30
     {'time': '11:45 - 12:30 h', 'group': '1º BACH (Todos)', 'group_display': '1º BACH (Todos)', 'activity': ['Hinchables Acuáticos'], 'monitor': ['Damasi/ Almudena'], 'ayudante': ['Docente que se quiera mojar'], 'obs': 'Ayudar al monitor de DAMASI y mojarte.<br>Contactar con Jose Fran para cubrir su función', 'end_block': True},
 
-    {'time': '11:45 - 12:30 h', 'group': '2º A BACH', 'group_display': '2º A BACH', 'activity': ['Lanzamiento (11:45-12:05)', 'Braile (12:05-12:30)'], 'monitor': ['UAVA', 'DIEGO'], 'ayudante': ['', 'VICKY'], 'obs': obs_general},
+    {'time': '11:45 - 12:30 h', 'group': '2º A BACH', 'group_display': '2º A BACH', 'activity': ['Lanzamiento (11:45-12:05)', 'Braile (12:05-12:30)'], 'monitor': ['UAVA', 'DIEGO'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:45 - 12:30 h', 'group': '2º B BACH', 'group_display': '2º B BACH', 'activity': ['Carrera de Saco (11:45-12:05)', 'Salto Longitud (12:05-12:30)'], 'monitor': ['Davinia', 'UAVA'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:45 - 12:30 h', 'group': '2º C BACH', 'group_display': '2º C BACH', 'activity': ['Juego de palabras (11:45-12:05)', 'Salto Comba (12:05-12:30)'], 'monitor': ['ORLANDO R.', 'Almudena'], 'ayudante': ['ANA MATA', ''], 'obs': obs_general, 'end_block': True},
 
     {'time': '11:45 - 12:30 h', 'group': 'CICLOS', 'group_display': 'CICLOS', 'activity': ['Pañuelito (11:45-12:05)', 'Lanzamiento (12:05-12:30)'], 'monitor': ['PAULA', 'UAVA'], 'ayudante': ['ROSI', ''], 'obs': obs_general, 'end_block': True},
 
-    {'time': '11:45 - 12:30 h', 'group': '4ºA ESO', 'group_display': '4ºA ESO', 'activity': ['Braile (11:45-12:05)', 'Lanzamiento (12:05-12:30)'], 'monitor': ['DIEGO', 'UAVA'], 'ayudante': ['VICKY', ''], 'obs': obs_general},
+    {'time': '11:45 - 12:30 h', 'group': '4ºA ESO', 'group_display': '4ºA ESO', 'activity': ['Braile (11:45-12:05)', 'Lanzamiento (12:05-12:30)'], 'monitor': ['DIEGO', 'UAVA'], 'ayudante': ['', ''], 'obs': obs_general},
     {'time': '11:45 - 12:30 h', 'group': '4ºB ESO', 'group_display': '4ºB ESO', 'activity': ['Salto Longitud (11:45-12:05)', 'Carrera de Saco (12:05-12:30)'], 'monitor': ['UAVA', 'Davinia'], 'ayudante': ['', ''], 'obs': obs_general, 'end_block': True},
     {'time': '11:45 - 12:30 h', 'group': '4ºC ESO', 'group_display': '4ºC ESO', 'activity': ['Salto Comba (11:45-12:05)', 'Juego de palabras (12:05-12:30)'], 'monitor': ['Almudena', 'ORLANDO R.'], 'ayudante': ['', 'ANA MATA'], 'obs': obs_general},
     {'time': '11:45 - 12:30 h', 'group': '4ºD ESO', 'group_display': '4ºD ESO', 'activity': ['Lanzamiento (11:45-12:05)', 'El pañuelito (12:05-12:30)'], 'monitor': ['UAVA', 'PAULA'], 'ayudante': ['', 'ROSI'], 'obs': obs_general, 'end_block': True}
