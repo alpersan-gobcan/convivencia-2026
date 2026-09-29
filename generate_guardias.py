@@ -285,7 +285,7 @@ acomp_data = [
     # Grupo A
     {"filter_1": "1º eso a", "filter_2": "rosalva marifé ana teresa", "cells": ["1º ESO A", "ROSALVA", "MARIFÉ / ANA TERESA"]},
     {"filter_1": "1º eso b", "filter_2": "ana teresa ángeles", "cells": ["1º ESO B", "ANA TERESA", "ÁNGELES"]},
-    {"filter_1": "1º eso c", "filter_2": "loli diego elena", "cells": ["1º ESO C", "Sust. Loli y Diego", "ELENA"]},
+    {"filter_1": "1º eso c", "filter_2": "loly diego elena", "cells": ["1º ESO C", "Sust. Loly y Diego", "ELENA"]},
     {"filter_1": "1º eso d", "filter_2": "ciro", "cells": ["1º ESO D", "CIRO", "CIRO"]},
     
     {"filter_1": "3º eso a", "filter_2": "silvia elicia noemi v", "cells": ["3º ESO A", "SILVIA", "ELICIA / Noemi V."]},
@@ -306,7 +306,7 @@ acomp_data = [
     {"filter_1": "2º eso a", "filter_2": "miguel artiles elizabeth", "cells": ["2º ESO A", "MIGUEL ARTILES", "Elizabeth"]},
     {"filter_1": "2º eso b", "filter_2": "elizabeth estefanía", "cells": ["2º ESO B", "ELIZABETH", "ESTEFANÍA"]},
     {"filter_1": "2º eso c", "filter_2": "bosco", "cells": ["2º ESO C", "BOSCO", "BOSCO"]},
-    {"filter_1": "2º eso d", "filter_2": "ana válido loly nerea", "cells": ["2º ESO D", "ANA VÁLIDO", "SUT LOLY / NEREA"]},
+    {"filter_1": "2º eso d", "filter_2": "ana válido loly nerea", "cells": ["2º ESO D", "ANA VÁLIDO", "Sust. Loly / NEREA"]},
     
     {"filter_1": "4º eso a", "filter_2": "almudena desireé", "cells": ["4º ESO A", "Almudena", "DESIREÉ"]},
     {"filter_1": "4º eso b", "filter_2": "almudena migue", "cells": ["4º ESO B", "Almudena", "Migue"]},
