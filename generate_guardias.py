@@ -1,6 +1,24 @@
 import json
 
-def create_html(title, description, headers, data, filters_html, filter_js):
+def get_color_map(data, filter_key):
+    unique_keys = []
+    for row in data:
+        val = row.get(filter_key, "").lower()
+        if val and val not in unique_keys:
+            unique_keys.append(val)
+    
+    # Amplia paleta de colores pastel
+    colors = [
+        '#dcfce7', '#ccfbf1', '#e0e7ff', '#fce7f3', '#fef3c7', '#ffedd5', '#fee2e2', '#f3e8ff',
+        '#e0f2fe', '#dbeafe', '#fae8ff', '#fef08a', '#bbf7d0', '#fecaca', '#fde68a', '#d9f99d',
+        '#a7f3d0', '#bae6fd', '#c7d2fe', '#e9d5ff', '#fbcfe8', '#fecdd3', '#ccfbf1', '#ffedd5'
+    ]
+    return {k: colors[i % len(colors)] for i, k in enumerate(unique_keys)}
+
+def create_html(title, description, headers, data, filters_html, filter_js, color_key="filter_1"):
+    
+    color_map = get_color_map(data, color_key)
+    
     html = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +46,6 @@ def create_html(title, description, headers, data, filters_html, filter_js):
         th {{ background-color: var(--primary); color: var(--white); }}
         .btn-back {{ display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }}
         .btn-back:hover {{ background: #004494; }}
-        .row-alt {{ background-color: #f1f5f9; }}
     </style>
 </head>
 <body>
@@ -54,9 +71,9 @@ def create_html(title, description, headers, data, filters_html, filter_js):
             </thead>
             <tbody>
 '''
-    for i, row in enumerate(data):
-        row_class = "row-alt" if i % 2 != 0 else ""
-        html += f'                <tr class="{row_class}" data-filter-1="{row.get("filter_1", "").lower()}" data-filter-2="{row.get("filter_2", "").lower()}" data-filter-3="{row.get("filter_3", "").lower()}">\n'
+    for row in data:
+        bg_color = color_map.get(row.get(color_key, "").lower(), "#ffffff")
+        html += f'                <tr style="background-color: {bg_color};" data-filter-1="{row.get("filter_1", "").lower()}" data-filter-2="{row.get("filter_2", "").lower()}" data-filter-3="{row.get("filter_3", "").lower()}">\n'
         for cell in row["cells"]:
             html += f'                    <td>{cell}</td>\n'
         html += '                </tr>\n'
@@ -65,7 +82,10 @@ def create_html(title, description, headers, data, filters_html, filter_js):
             </tbody>
         </table>
     </div>
-    
+'''
+
+    if "docentes_acompanantes" in title.lower() or "centro" in title.lower():
+        html += '''
     <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
         <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información Interna (Profesorado de Guardia)</h3>
         
@@ -87,7 +107,9 @@ def create_html(title, description, headers, data, filters_html, filter_js):
         
         <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">Nota: Cristian va en coche</p>
     </div>
+'''
 
+    html += f'''
     <script>
 {filter_js}
     </script>
@@ -95,6 +117,15 @@ def create_html(title, description, headers, data, filters_html, filter_js):
 </html>
 '''
     return html
+
+# Lista maestra de docentes para el desplegable (ordenada alfabéticamente)
+teachers_list = [
+    'Alberto', 'Alejandro', 'Almudena', 'Ana Mata', 'Ana Medina', 'Ana Teresa', 'Ana Válido', 'Ángeles', 'Antonia', 'Antonio', 'Bosco', 'Bruno', 'Ciro', 'Coralia', 'Cristian', 'David', 'Desireé', 'Diego', 'Elena', 'Elicia', 'Elizabeth', 'Estefanía', 'Fernando', 'Irene', 'Jesús', 'José Báez', 'José Miguel', 'Julia', 'Lidia', 'Loly', 'Mª Elena', 'Mari Pino', 'Maite', 'Marifé', 'Miguel Ángel Moreno', 'Miguel Artiles', 'Migue', 'Mila', 'Mónica Díaz', 'Mónica S.', 'Monroy', 'Naira', 'Nerea', 'Nizamar', 'Noemi V.', 'Orlando H.', 'Orlando R.', 'Paula', 'Pedro', 'Rita', 'Rosalva', 'Rosario', 'Rosi', 'Ruth', 'Sergio', 'Silvia', 'Sixto', 'Sonia', 'Tecenery', 'Vicky', 'Yaiza'
+]
+
+teacher_options = '<option value="">Todos los docentes</option>\n'
+for t in teachers_list:
+    teacher_options += f'        <option value="{t.lower()}">{t}</option>\n'
 
 # ----------------------------------------------------
 # 1. GUARDIAS EN EL ESTADIO
@@ -130,7 +161,7 @@ estadio_data = [
     {"filter_1": "11:45 a 12:30", "filter_2": "desireé", "filter_3": "baños", "cells": ["11:45 a 12:30 H", "Baños", "Desireé", "-Controlar el acceso al baño y revisar que no lo dejen en mal estado"]},
 ]
 
-estadio_filters_html = '''
+estadio_filters_html = f'''
     <div class="filter-group">
         <label for="timeFilter" style="font-weight: bold;">Franja Horaria:</label>
         <select id="timeFilter" onchange="filterTable()">
@@ -143,7 +174,9 @@ estadio_filters_html = '''
     </div>
     <div class="filter-group">
         <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
-        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+        <select id="docenteFilter" onchange="filterTable()">
+{teacher_options}
+        </select>
     </div>
 '''
 
@@ -157,7 +190,13 @@ estadio_filter_js = '''
             const rowDoc = row.getAttribute('data-filter-2');
             
             const matchTime = (timeF === 'all' || rowTime.includes(timeF));
-            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
             
             if (matchTime && matchDoc) {
                 row.style.display = '';
@@ -169,7 +208,7 @@ estadio_filter_js = '''
 '''
 
 with open('guardias_estadio.html', 'w', encoding='utf-8') as f:
-    f.write(create_html("Guardias en el Estadio", "Estadio Municipal de Vecindario - 09/10/2026", estadio_headers, estadio_data, estadio_filters_html, estadio_filter_js))
+    f.write(create_html("Guardias en el Estadio", "Estadio Municipal de Vecindario - 09/10/2026", estadio_headers, estadio_data, estadio_filters_html, estadio_filter_js, color_key="filter_3"))
 
 # ----------------------------------------------------
 # 2. GUARDIAS EN EL CENTRO
@@ -182,10 +221,10 @@ centro_data = [
     {"filter_1": "4º eso+2º pdc", "filter_2": "mari pino mónica s. david baño david ruth", "cells": ["4º ESO+2º PDC", "MARI PINO A23", "MÓNICA S. A23 O SALON ACTOS", "MÓNICA S. A23", "DAVID BAÑO EXT.", "DAVID A22", "RUTH A23", ""]},
     {"filter_1": "bachill", "filter_2": "josé báez antonio nizamar", "cells": ["BACHILL.", "JOSÉ BÁEZ A24", "JOSÉ BÁEZ A24", "ANTONIO A24", "", "NIZAMAR A24", "NIZAMAR A24 O SALÓN ACTOS", ""]},
     {"filter_1": "cfgb+cfgm", "filter_2": "tecenery ana medina naira bruno", "cells": ["CFGB+CFGM", "TECENERY A26", "ANA MEDINA A26", "NAIRA A26", "GUARDIA JARDÍN NAIRA", "NAIRA A26 O SALÓN A.", "BRUNO A26", ""]},
-    {"filter_1": "mesa guardia", "filter_2": "ana medina tecenery elicia julia fernando david lidia mónica s ruth nizamar", "cells": ["MESA GUARDIA", "ANA MEDINA", "TECENERY ELICIA", "JULIA FERNANDO", "FERNANDO", "DAVID LIDIA", "MÓNICA S RUTH", "NIZAMAR"]}
+    {"filter_1": "mesa guardia", "filter_2": "ana medina tecenery elicia julia fernando david lidia mónica s ruth nizamar", "cells": ["MESA GUARDIA", "ANA MEDINA", "TECENERY ELICIA", "JULIA FERNANDO", "FERNANDO", "DAVID LIDIA", "MÓNICA S. RUTH", "NIZAMAR"]}
 ]
 
-centro_filters_html = '''
+centro_filters_html = f'''
     <div class="filter-group">
         <label for="nivelFilter" style="font-weight: bold;">Nivel/Curso:</label>
         <select id="nivelFilter" onchange="filterTable()">
@@ -201,7 +240,9 @@ centro_filters_html = '''
     </div>
     <div class="filter-group">
         <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
-        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+        <select id="docenteFilter" onchange="filterTable()">
+{teacher_options}
+        </select>
     </div>
 '''
 
@@ -215,7 +256,13 @@ centro_filter_js = '''
             const rowDoc = row.getAttribute('data-filter-2');
             
             const matchNivel = (nivelF === 'all' || rowNivel.includes(nivelF));
-            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
             
             if (matchNivel && matchDoc) {
                 row.style.display = '';
@@ -227,7 +274,7 @@ centro_filter_js = '''
 '''
 
 with open('guardias_centro.html', 'w', encoding='utf-8') as f:
-    f.write(create_html("Guardias en el Centro", "Docentes que se quedan en el centro de guardia", centro_headers, centro_data, centro_filters_html, centro_filter_js))
+    f.write(create_html("Guardias en el Centro", "Docentes que se quedan en el centro de guardia", centro_headers, centro_data, centro_filters_html, centro_filter_js, color_key="filter_1"))
 
 
 # ----------------------------------------------------
@@ -238,7 +285,7 @@ acomp_data = [
     # Grupo A
     {"filter_1": "1º eso a", "filter_2": "rosalva marifé ana teresa", "cells": ["1º ESO A", "ROSALVA", "MARIFÉ / ANA TERESA"]},
     {"filter_1": "1º eso b", "filter_2": "ana teresa ángeles", "cells": ["1º ESO B", "ANA TERESA", "ÁNGELES"]},
-    {"filter_1": "1º eso c", "filter_2": "sust loli diego elena", "cells": ["1º ESO C", "Sust. Loli y Diego", "ELENA"]},
+    {"filter_1": "1º eso c", "filter_2": "loli diego elena", "cells": ["1º ESO C", "Sust. Loli y Diego", "ELENA"]},
     {"filter_1": "1º eso d", "filter_2": "ciro", "cells": ["1º ESO D", "CIRO", "CIRO"]},
     
     {"filter_1": "3º eso a", "filter_2": "silvia elicia noemi v", "cells": ["3º ESO A", "SILVIA", "ELICIA / Noemi V."]},
@@ -259,7 +306,7 @@ acomp_data = [
     {"filter_1": "2º eso a", "filter_2": "miguel artiles elizabeth", "cells": ["2º ESO A", "MIGUEL ARTILES", "Elizabeth"]},
     {"filter_1": "2º eso b", "filter_2": "elizabeth estefanía", "cells": ["2º ESO B", "ELIZABETH", "ESTEFANÍA"]},
     {"filter_1": "2º eso c", "filter_2": "bosco", "cells": ["2º ESO C", "BOSCO", "BOSCO"]},
-    {"filter_1": "2º eso d", "filter_2": "ana válido sut loly nerea", "cells": ["2º ESO D", "ANA VÁLIDO", "SUT LOLY / NEREA"]},
+    {"filter_1": "2º eso d", "filter_2": "ana válido loly nerea", "cells": ["2º ESO D", "ANA VÁLIDO", "SUT LOLY / NEREA"]},
     
     {"filter_1": "4º eso a", "filter_2": "almudena desireé", "cells": ["4º ESO A", "Almudena", "DESIREÉ"]},
     {"filter_1": "4º eso b", "filter_2": "almudena migue", "cells": ["4º ESO B", "Almudena", "Migue"]},
@@ -275,7 +322,7 @@ acomp_data = [
     {"filter_1": "2º bach c", "filter_2": "vicky ana mata almudena", "cells": ["2º BACH C", "Vicky", "Ana Mata / Almudena"]}
 ]
 
-acomp_filters_html = '''
+acomp_filters_html = f'''
     <div class="filter-group">
         <label for="grupoFilter" style="font-weight: bold;">Grupo:</label>
         <select id="grupoFilter" onchange="filterTable()">
@@ -294,7 +341,9 @@ acomp_filters_html = '''
     </div>
     <div class="filter-group">
         <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
-        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+        <select id="docenteFilter" onchange="filterTable()">
+{teacher_options}
+        </select>
     </div>
 '''
 
@@ -308,7 +357,13 @@ acomp_filter_js = '''
             const rowDoc = row.getAttribute('data-filter-2');
             
             const matchGrupo = (grupoF === 'all' || rowGrupo.includes(grupoF));
-            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
             
             if (matchGrupo && matchDoc) {
                 row.style.display = '';
@@ -320,5 +375,4 @@ acomp_filter_js = '''
 '''
 
 with open('docentes_acompanantes.html', 'w', encoding='utf-8') as f:
-    f.write(create_html("Docentes que Acompañan", "Asignación de docentes para la salida y el regreso", acomp_headers, acomp_data, acomp_filters_html, acomp_filter_js))
-
+    f.write(create_html("Docentes que Acompañan", "Asignación de docentes para la salida y el regreso", acomp_headers, acomp_data, acomp_filters_html, acomp_filter_js, color_key="filter_1"))

@@ -25,7 +25,6 @@
         th { background-color: var(--primary); color: var(--white); }
         .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .btn-back:hover { background: #004494; }
-        .row-alt { background-color: #f1f5f9; }
     </style>
 </head>
 <body>
@@ -49,7 +48,71 @@
     </div>
     <div class="filter-group">
         <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
-        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+        <select id="docenteFilter" onchange="filterTable()">
+<option value="">Todos los docentes</option>
+        <option value="alberto">Alberto</option>
+        <option value="alejandro">Alejandro</option>
+        <option value="almudena">Almudena</option>
+        <option value="ana mata">Ana Mata</option>
+        <option value="ana medina">Ana Medina</option>
+        <option value="ana teresa">Ana Teresa</option>
+        <option value="ana válido">Ana Válido</option>
+        <option value="ángeles">Ángeles</option>
+        <option value="antonia">Antonia</option>
+        <option value="antonio">Antonio</option>
+        <option value="bosco">Bosco</option>
+        <option value="bruno">Bruno</option>
+        <option value="ciro">Ciro</option>
+        <option value="coralia">Coralia</option>
+        <option value="cristian">Cristian</option>
+        <option value="david">David</option>
+        <option value="desireé">Desireé</option>
+        <option value="diego">Diego</option>
+        <option value="elena">Elena</option>
+        <option value="elicia">Elicia</option>
+        <option value="elizabeth">Elizabeth</option>
+        <option value="estefanía">Estefanía</option>
+        <option value="fernando">Fernando</option>
+        <option value="irene">Irene</option>
+        <option value="jesús">Jesús</option>
+        <option value="josé báez">José Báez</option>
+        <option value="josé miguel">José Miguel</option>
+        <option value="julia">Julia</option>
+        <option value="lidia">Lidia</option>
+        <option value="loly">Loly</option>
+        <option value="mª elena">Mª Elena</option>
+        <option value="mari pino">Mari Pino</option>
+        <option value="maite">Maite</option>
+        <option value="marifé">Marifé</option>
+        <option value="miguel ángel moreno">Miguel Ángel Moreno</option>
+        <option value="miguel artiles">Miguel Artiles</option>
+        <option value="migue">Migue</option>
+        <option value="mila">Mila</option>
+        <option value="mónica díaz">Mónica Díaz</option>
+        <option value="mónica s.">Mónica S.</option>
+        <option value="monroy">Monroy</option>
+        <option value="naira">Naira</option>
+        <option value="nerea">Nerea</option>
+        <option value="nizamar">Nizamar</option>
+        <option value="noemi v.">Noemi V.</option>
+        <option value="orlando h.">Orlando H.</option>
+        <option value="orlando r.">Orlando R.</option>
+        <option value="paula">Paula</option>
+        <option value="pedro">Pedro</option>
+        <option value="rita">Rita</option>
+        <option value="rosalva">Rosalva</option>
+        <option value="rosario">Rosario</option>
+        <option value="rosi">Rosi</option>
+        <option value="ruth">Ruth</option>
+        <option value="sergio">Sergio</option>
+        <option value="silvia">Silvia</option>
+        <option value="sixto">Sixto</option>
+        <option value="sonia">Sonia</option>
+        <option value="tecenery">Tecenery</option>
+        <option value="vicky">Vicky</option>
+        <option value="yaiza">Yaiza</option>
+
+        </select>
     </div>
 
     </div>
@@ -66,145 +129,145 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="antonia alberto" data-filter-3="entrada">
+                <tr style="background-color: #dcfce7;" data-filter-1="9:00 a 10:15" data-filter-2="antonia alberto" data-filter-3="entrada">
                     <td>9:00 a 10:15 H</td>
                     <td>Entrada y Salida del Estadio</td>
                     <td>Antonia y Alberto</td>
                     <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="miguel artiles" data-filter-3="escalinatas">
+                <tr style="background-color: #ccfbf1;" data-filter-1="9:00 a 10:15" data-filter-2="miguel artiles" data-filter-3="escalinatas">
                     <td>9:00 a 10:15 H</td>
                     <td>Zona de Escalinatas</td>
                     <td>Miguel Artiles</td>
                     <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
                 </tr>
-                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="mónica díaz" data-filter-3="área 1">
+                <tr style="background-color: #e0e7ff;" data-filter-1="9:00 a 10:15" data-filter-2="mónica díaz" data-filter-3="área 1">
                     <td>9:00 a 10:15 H</td>
                     <td>Área 1</td>
                     <td>Mónica Díaz</td>
                     <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="pedro" data-filter-3="área 2">
+                <tr style="background-color: #fce7f3;" data-filter-1="9:00 a 10:15" data-filter-2="pedro" data-filter-3="área 2">
                     <td>9:00 a 10:15 H</td>
                     <td>Área 2</td>
                     <td>Pedro</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="rita" data-filter-3="centro">
+                <tr style="background-color: #fef3c7;" data-filter-1="9:00 a 10:15" data-filter-2="rita" data-filter-3="centro">
                     <td>9:00 a 10:15 H</td>
                     <td>Zona Centro</td>
                     <td>Rita</td>
                     <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="ruth" data-filter-3="baños">
+                <tr style="background-color: #ffedd5;" data-filter-1="9:00 a 10:15" data-filter-2="ruth" data-filter-3="baños">
                     <td>9:00 a 10:15 H</td>
                     <td>Baños</td>
                     <td>Ruth</td>
                     <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
                 </tr>
-                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="josé miguel" data-filter-3="entrada">
+                <tr style="background-color: #dcfce7;" data-filter-1="10:15 a 11:00" data-filter-2="josé miguel" data-filter-3="entrada">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Entrada y Salida del Estadio</td>
                     <td>José Miguel</td>
                     <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="mila" data-filter-3="escalinatas">
+                <tr style="background-color: #ccfbf1;" data-filter-1="10:15 a 11:00" data-filter-2="mila" data-filter-3="escalinatas">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Zona de Escalinatas</td>
                     <td>Mila</td>
                     <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
                 </tr>
-                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="mª elena" data-filter-3="área 1">
+                <tr style="background-color: #e0e7ff;" data-filter-1="10:15 a 11:00" data-filter-2="mª elena" data-filter-3="área 1">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Área 1</td>
                     <td>Mª Elena</td>
                     <td>El alumnado debe de estar en las gradas para desayunar y luego a la zumba hasta el comienzo de las actividades.</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="orlando h." data-filter-3="área 2">
+                <tr style="background-color: #fce7f3;" data-filter-1="10:15 a 11:00" data-filter-2="orlando h." data-filter-3="área 2">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Área 2</td>
                     <td>Orlando H.</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="irene" data-filter-3="centro">
+                <tr style="background-color: #fef3c7;" data-filter-1="10:15 a 11:00" data-filter-2="irene" data-filter-3="centro">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Zona Centro</td>
                     <td>Irene</td>
                     <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="pedro" data-filter-3="baños">
+                <tr style="background-color: #ffedd5;" data-filter-1="10:15 a 11:00" data-filter-2="pedro" data-filter-3="baños">
                     <td>10:15 a 11:00 H (Recreo)</td>
                     <td>Baños</td>
                     <td>Pedro</td>
                     <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
                 </tr>
-                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="miguel ángel moreno desireé" data-filter-3="entrada">
+                <tr style="background-color: #dcfce7;" data-filter-1="11:00 a 11:45" data-filter-2="miguel ángel moreno desireé" data-filter-3="entrada">
                     <td>11:00 a 11:45 H</td>
                     <td>Entrada y Salida del Estadio</td>
                     <td>Miguel Ángel Moreno y Desireé</td>
                     <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="jesús" data-filter-3="escalinatas">
+                <tr style="background-color: #ccfbf1;" data-filter-1="11:00 a 11:45" data-filter-2="jesús" data-filter-3="escalinatas">
                     <td>11:00 a 11:45 H</td>
                     <td>Zona de Escalinatas</td>
                     <td>Jesús</td>
                     <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
                 </tr>
-                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="mila" data-filter-3="área 1">
+                <tr style="background-color: #e0e7ff;" data-filter-1="11:00 a 11:45" data-filter-2="mila" data-filter-3="área 1">
                     <td>11:00 a 11:45 H</td>
                     <td>Área 1</td>
                     <td>Mila</td>
                     <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="yaiza" data-filter-3="área 2">
+                <tr style="background-color: #fce7f3;" data-filter-1="11:00 a 11:45" data-filter-2="yaiza" data-filter-3="área 2">
                     <td>11:00 a 11:45 H</td>
                     <td>Área 2</td>
                     <td>Yaiza</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="noemi v." data-filter-3="centro">
+                <tr style="background-color: #fef3c7;" data-filter-1="11:00 a 11:45" data-filter-2="noemi v." data-filter-3="centro">
                     <td>11:00 a 11:45 H</td>
                     <td>Zona Centro</td>
                     <td>Noemi V.</td>
                     <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="nerea" data-filter-3="baños">
+                <tr style="background-color: #ffedd5;" data-filter-1="11:00 a 11:45" data-filter-2="nerea" data-filter-3="baños">
                     <td>11:00 a 11:45 H</td>
                     <td>Baños</td>
                     <td>Nerea</td>
                     <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
                 </tr>
-                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="orlando h. yaiza" data-filter-3="entrada">
+                <tr style="background-color: #dcfce7;" data-filter-1="11:45 a 12:30" data-filter-2="orlando h. yaiza" data-filter-3="entrada">
                     <td>11:45 a 12:30 H</td>
                     <td>Entrada y Salida del Estadio</td>
                     <td>Orlando H. y Yaiza</td>
                     <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="jesús" data-filter-3="escalinatas">
+                <tr style="background-color: #ccfbf1;" data-filter-1="11:45 a 12:30" data-filter-2="jesús" data-filter-3="escalinatas">
                     <td>11:45 a 12:30 H</td>
                     <td>Zona de Escalinatas</td>
                     <td>Jesús</td>
                     <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
                 </tr>
-                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="miguel ángel moreno" data-filter-3="área 1">
+                <tr style="background-color: #e0e7ff;" data-filter-1="11:45 a 12:30" data-filter-2="miguel ángel moreno" data-filter-3="área 1">
                     <td>11:45 a 12:30 H</td>
                     <td>Área 1</td>
                     <td>Miguel Ángel Moreno</td>
                     <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="noemi v." data-filter-3="área 2">
+                <tr style="background-color: #fce7f3;" data-filter-1="11:45 a 12:30" data-filter-2="noemi v." data-filter-3="área 2">
                     <td>11:45 a 12:30 H</td>
                     <td>Área 2</td>
                     <td>Noemi V.</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="mila" data-filter-3="centro">
+                <tr style="background-color: #fef3c7;" data-filter-1="11:45 a 12:30" data-filter-2="mila" data-filter-3="centro">
                     <td>11:45 a 12:30 H</td>
                     <td>Zona Centro</td>
                     <td>Mila</td>
                     <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="desireé" data-filter-3="baños">
+                <tr style="background-color: #ffedd5;" data-filter-1="11:45 a 12:30" data-filter-2="desireé" data-filter-3="baños">
                     <td>11:45 a 12:30 H</td>
                     <td>Baños</td>
                     <td>Desireé</td>
@@ -213,28 +276,6 @@
 
             </tbody>
         </table>
-    </div>
-    
-    <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
-        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información Interna (Profesorado de Guardia)</h3>
-        
-        <p><strong>PROFESORADO QUE SE QUEDA EN EL CENTRO DE GUARDIA:</strong><br>
-        TECENERY, JOSÉ BÁEZ, SONIA, ANTONIO, NAIRA, JULIA, Mª PINO, BRUNO, ANA MEDINA, NIZAMAR, ROSARIO, MAITE, DAVID, MÓNICA S., FERNANDO.</p>
-        
-        <p style="margin-top: 1rem;"><strong>A LAS 10:40: SE BAJA A PISTA DE ATLETISMO A:</strong><br>
-        S (SERGIO, NEREA, DESIREÉ, ELICIA, ELENA)<br>
-        N (MONROY, MIGUEL ÁNGEL MORENO, JESÚS, MARIFÉ)<br>
-        O (YAIZA, NOEMÍ V, ESTEFANÍA)</p>
-
-        <p style="margin-top: 1rem;"><strong>A LAS 10:55 SE RECOGE EN PISTA DE ATLETISMO A:</strong><br>
-        N (ALBERTO, SIXTO, MIGUEL ARTILES, MÓNICA DÍAZ)<br>
-        O (RITA, ANTONIA, RUTH)</p>
-        
-        <p style="margin-top: 1rem;"><strong>A LAS 11:05 SE RECOGE EN PISTA DE ATLETISMO:</strong><br>
-        N (JOSÉ MIGUEL)<br>
-        O (PEDRO, ANA VÁLIDO, Mª ELENA)</p>
-        
-        <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">Nota: Cristian va en coche</p>
     </div>
 
     <script>
@@ -248,7 +289,13 @@
             const rowDoc = row.getAttribute('data-filter-2');
             
             const matchTime = (timeF === 'all' || rowTime.includes(timeF));
-            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
             
             if (matchTime && matchDoc) {
                 row.style.display = '';

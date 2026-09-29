@@ -25,7 +25,6 @@
         th { background-color: var(--primary); color: var(--white); }
         .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .btn-back:hover { background: #004494; }
-        .row-alt { background-color: #f1f5f9; }
     </style>
 </head>
 <body>
@@ -52,7 +51,71 @@
     </div>
     <div class="filter-group">
         <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
-        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+        <select id="docenteFilter" onchange="filterTable()">
+<option value="">Todos los docentes</option>
+        <option value="alberto">Alberto</option>
+        <option value="alejandro">Alejandro</option>
+        <option value="almudena">Almudena</option>
+        <option value="ana mata">Ana Mata</option>
+        <option value="ana medina">Ana Medina</option>
+        <option value="ana teresa">Ana Teresa</option>
+        <option value="ana válido">Ana Válido</option>
+        <option value="ángeles">Ángeles</option>
+        <option value="antonia">Antonia</option>
+        <option value="antonio">Antonio</option>
+        <option value="bosco">Bosco</option>
+        <option value="bruno">Bruno</option>
+        <option value="ciro">Ciro</option>
+        <option value="coralia">Coralia</option>
+        <option value="cristian">Cristian</option>
+        <option value="david">David</option>
+        <option value="desireé">Desireé</option>
+        <option value="diego">Diego</option>
+        <option value="elena">Elena</option>
+        <option value="elicia">Elicia</option>
+        <option value="elizabeth">Elizabeth</option>
+        <option value="estefanía">Estefanía</option>
+        <option value="fernando">Fernando</option>
+        <option value="irene">Irene</option>
+        <option value="jesús">Jesús</option>
+        <option value="josé báez">José Báez</option>
+        <option value="josé miguel">José Miguel</option>
+        <option value="julia">Julia</option>
+        <option value="lidia">Lidia</option>
+        <option value="loly">Loly</option>
+        <option value="mª elena">Mª Elena</option>
+        <option value="mari pino">Mari Pino</option>
+        <option value="maite">Maite</option>
+        <option value="marifé">Marifé</option>
+        <option value="miguel ángel moreno">Miguel Ángel Moreno</option>
+        <option value="miguel artiles">Miguel Artiles</option>
+        <option value="migue">Migue</option>
+        <option value="mila">Mila</option>
+        <option value="mónica díaz">Mónica Díaz</option>
+        <option value="mónica s.">Mónica S.</option>
+        <option value="monroy">Monroy</option>
+        <option value="naira">Naira</option>
+        <option value="nerea">Nerea</option>
+        <option value="nizamar">Nizamar</option>
+        <option value="noemi v.">Noemi V.</option>
+        <option value="orlando h.">Orlando H.</option>
+        <option value="orlando r.">Orlando R.</option>
+        <option value="paula">Paula</option>
+        <option value="pedro">Pedro</option>
+        <option value="rita">Rita</option>
+        <option value="rosalva">Rosalva</option>
+        <option value="rosario">Rosario</option>
+        <option value="rosi">Rosi</option>
+        <option value="ruth">Ruth</option>
+        <option value="sergio">Sergio</option>
+        <option value="silvia">Silvia</option>
+        <option value="sixto">Sixto</option>
+        <option value="sonia">Sonia</option>
+        <option value="tecenery">Tecenery</option>
+        <option value="vicky">Vicky</option>
+        <option value="yaiza">Yaiza</option>
+
+        </select>
     </div>
 
     </div>
@@ -73,7 +136,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="" data-filter-1="1º eso" data-filter-2="sonia mari pino rosario fernando david" data-filter-3="">
+                <tr style="background-color: #dcfce7;" data-filter-1="1º eso" data-filter-2="sonia mari pino rosario fernando david" data-filter-3="">
                     <td>1º ESO</td>
                     <td>SONIA A 20</td>
                     <td>SONIA A20</td>
@@ -83,7 +146,7 @@
                     <td>DAVID A20</td>
                     <td>ROSARIO A20 O SALÓN ACTOS</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="2º eso" data-filter-2="rosario mari pino mónica s. julia fernando" data-filter-3="">
+                <tr style="background-color: #ccfbf1;" data-filter-1="2º eso" data-filter-2="rosario mari pino mónica s. julia fernando" data-filter-3="">
                     <td>2º ESO</td>
                     <td>ROSARIO SALÓN ACTOS</td>
                     <td>MARI PINO A21</td>
@@ -93,7 +156,7 @@
                     <td>JULIA A21</td>
                     <td>FERNANDO A21</td>
                 </tr>
-                <tr class="" data-filter-1="3º eso+1º pdc" data-filter-2="antonio sonia fernando antonia bruno naira" data-filter-3="">
+                <tr style="background-color: #e0e7ff;" data-filter-1="3º eso+1º pdc" data-filter-2="antonio sonia fernando antonia bruno naira" data-filter-3="">
                     <td>3º ESO+1º PDC</td>
                     <td>ANTONIO A22</td>
                     <td>ANTONIO A22</td>
@@ -103,7 +166,7 @@
                     <td>ANTONIA A22</td>
                     <td>BAJAN A JARDÍN CON BRUNO Y NAIRA</td>
                 </tr>
-                <tr class="row-alt" data-filter-1="4º eso+2º pdc" data-filter-2="mari pino mónica s. david baño david ruth" data-filter-3="">
+                <tr style="background-color: #fce7f3;" data-filter-1="4º eso+2º pdc" data-filter-2="mari pino mónica s. david baño david ruth" data-filter-3="">
                     <td>4º ESO+2º PDC</td>
                     <td>MARI PINO A23</td>
                     <td>MÓNICA S. A23 O SALON ACTOS</td>
@@ -113,7 +176,7 @@
                     <td>RUTH A23</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="bachill" data-filter-2="josé báez antonio nizamar" data-filter-3="">
+                <tr style="background-color: #fef3c7;" data-filter-1="bachill" data-filter-2="josé báez antonio nizamar" data-filter-3="">
                     <td>BACHILL.</td>
                     <td>JOSÉ BÁEZ A24</td>
                     <td>JOSÉ BÁEZ A24</td>
@@ -123,7 +186,7 @@
                     <td>NIZAMAR A24 O SALÓN ACTOS</td>
                     <td></td>
                 </tr>
-                <tr class="row-alt" data-filter-1="cfgb+cfgm" data-filter-2="tecenery ana medina naira bruno" data-filter-3="">
+                <tr style="background-color: #ffedd5;" data-filter-1="cfgb+cfgm" data-filter-2="tecenery ana medina naira bruno" data-filter-3="">
                     <td>CFGB+CFGM</td>
                     <td>TECENERY A26</td>
                     <td>ANA MEDINA A26</td>
@@ -133,21 +196,21 @@
                     <td>BRUNO A26</td>
                     <td></td>
                 </tr>
-                <tr class="" data-filter-1="mesa guardia" data-filter-2="ana medina tecenery elicia julia fernando david lidia mónica s ruth nizamar" data-filter-3="">
+                <tr style="background-color: #fee2e2;" data-filter-1="mesa guardia" data-filter-2="ana medina tecenery elicia julia fernando david lidia mónica s ruth nizamar" data-filter-3="">
                     <td>MESA GUARDIA</td>
                     <td>ANA MEDINA</td>
                     <td>TECENERY ELICIA</td>
                     <td>JULIA FERNANDO</td>
                     <td>FERNANDO</td>
                     <td>DAVID LIDIA</td>
-                    <td>MÓNICA S RUTH</td>
+                    <td>MÓNICA S. RUTH</td>
                     <td>NIZAMAR</td>
                 </tr>
 
             </tbody>
         </table>
     </div>
-    
+
     <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
         <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información Interna (Profesorado de Guardia)</h3>
         
@@ -181,7 +244,13 @@
             const rowDoc = row.getAttribute('data-filter-2');
             
             const matchNivel = (nivelF === 'all' || rowNivel.includes(nivelF));
-            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
             
             if (matchNivel && matchDoc) {
                 row.style.display = '';
