@@ -74,7 +74,17 @@ def create_html(title, area, groups, data, color_map):
             .btn-back {{ display: none !important; }}
             .filter-container {{ display: none !important; }}
             .mobile-notice {{ display: none !important; }}
-            body {{ padding: 0 !important; }}
+            body {{ 
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }}
+            table {{ page-break-inside: auto; }}
+            tr, td, th {{ 
+                page-break-inside: avoid; 
+                page-break-after: auto; 
+            }}
+            thead {{ display: table-header-group; }}
         }}
     </style>
 </head>
