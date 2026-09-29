@@ -332,7 +332,32 @@
             document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
         }
 
-{filter_js}
+
+    function filterTable() {
+        const timeF = document.getElementById('timeFilter').value;
+        const docF = document.getElementById('docenteFilter').value.toLowerCase();
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(row => {
+            const rowTime = row.getAttribute('data-filter-1');
+            const rowDoc = row.getAttribute('data-filter-2');
+            
+            const matchTime = (timeF === 'all' || rowTime.includes(timeF));
+            
+            let matchDoc = false;
+            if (docF === '') {
+                matchDoc = true;
+            } else {
+                matchDoc = rowDoc.includes(docF);
+            }
+            
+            if (matchTime && matchDoc) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
     </script>
 </body>
 </html>

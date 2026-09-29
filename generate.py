@@ -172,14 +172,14 @@ def create_html(title, area, groups, data, color_map):
 
     <script>
         let currentFontSize = 16;
-        function changeFontSize(change) {{
+        function changeFontSize(change) {
             currentFontSize += change;
             if (currentFontSize < 12) currentFontSize = 12;
             if (currentFontSize > 24) currentFontSize = 24;
             document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
-        }}
+        }
 
-        function updateRowspans() {{
+        function updateRowspans() {
             const rows = Array.from(document.querySelectorAll('#scheduleTable tbody tr'));
             let currentObs = null;
             let obsRow = null;

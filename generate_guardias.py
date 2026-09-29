@@ -164,7 +164,7 @@ def create_html(title, description, headers, data, filters_html, filter_js, colo
             document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
         }}
 
-{{filter_js}}
+{filter_js}
     </script>
 </body>
 </html>
