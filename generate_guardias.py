@@ -65,6 +65,28 @@ def create_html(title, description, headers, data, filters_html, filter_js):
             </tbody>
         </table>
     </div>
+    
+    <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información Interna (Profesorado de Guardia)</h3>
+        
+        <p><strong>PROFESORADO QUE SE QUEDA EN EL CENTRO DE GUARDIA:</strong><br>
+        TECENERY, JOSÉ BÁEZ, SONIA, ANTONIO, NAIRA, JULIA, Mª PINO, BRUNO, ANA MEDINA, NIZAMAR, ROSARIO, MAITE, DAVID, MÓNICA S., FERNANDO.</p>
+        
+        <p style="margin-top: 1rem;"><strong>A LAS 10:40: SE BAJA A PISTA DE ATLETISMO A:</strong><br>
+        S (SERGIO, NEREA, DESIREÉ, ELICIA, ELENA)<br>
+        N (MONROY, MIGUEL ÁNGEL MORENO, JESÚS, MARIFÉ)<br>
+        O (YAIZA, NOEMÍ V, ESTEFANÍA)</p>
+
+        <p style="margin-top: 1rem;"><strong>A LAS 10:55 SE RECOGE EN PISTA DE ATLETISMO A:</strong><br>
+        N (ALBERTO, SIXTO, MIGUEL ARTILES, MÓNICA DÍAZ)<br>
+        O (RITA, ANTONIA, RUTH)</p>
+        
+        <p style="margin-top: 1rem;"><strong>A LAS 11:05 SE RECOGE EN PISTA DE ATLETISMO:</strong><br>
+        N (JOSÉ MIGUEL)<br>
+        O (PEDRO, ANA VÁLIDO, Mª ELENA)</p>
+        
+        <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">Nota: Cristian va en coche</p>
+    </div>
 
     <script>
 {filter_js}
@@ -214,12 +236,12 @@ with open('guardias_centro.html', 'w', encoding='utf-8') as f:
 acomp_headers = ["Grupo", "Responsables Salida (8:30 / 8:45)", "Responsables Regreso (13:00 / 13:10)"]
 acomp_data = [
     # Grupo A
-    {"filter_1": "1º eso a", "filter_2": "rosalva ana teresa marifé", "cells": ["1º ESO A", "ROSALVA / ANA TERESA", "MARIFÉ / ANA TERESA"]},
-    {"filter_1": "1º eso b", "filter_2": "ángeles", "cells": ["1º ESO B", "ÁNGELES", "ÁNGELES"]},
-    {"filter_1": "1º eso c", "filter_2": "loly elena", "cells": ["1º ESO C", "LOLY", "ELENA"]},
+    {"filter_1": "1º eso a", "filter_2": "rosalva marifé ana teresa", "cells": ["1º ESO A", "ROSALVA", "MARIFÉ / ANA TERESA"]},
+    {"filter_1": "1º eso b", "filter_2": "ana teresa ángeles", "cells": ["1º ESO B", "ANA TERESA", "ÁNGELES"]},
+    {"filter_1": "1º eso c", "filter_2": "sust loli diego elena", "cells": ["1º ESO C", "Sust. Loli y Diego", "ELENA"]},
     {"filter_1": "1º eso d", "filter_2": "ciro", "cells": ["1º ESO D", "CIRO", "CIRO"]},
     
-    {"filter_1": "3º eso a", "filter_2": "silvia elicia", "cells": ["3º ESO A", "SILVIA", "ELICIA"]},
+    {"filter_1": "3º eso a", "filter_2": "silvia elicia noemi v", "cells": ["3º ESO A", "SILVIA", "ELICIA / Noemi V."]},
     {"filter_1": "3º eso b", "filter_2": "sixto monroy", "cells": ["3º ESO B", "SIXTO", "MONROY"]},
     {"filter_1": "3º eso c", "filter_2": "rita silvia", "cells": ["3º ESO C", "RITA", "SILVIA"]},
     {"filter_1": "3º eso d", "filter_2": "coralia", "cells": ["3º ESO D", "CORALIA", "CORALIA"]},
@@ -231,25 +253,26 @@ acomp_data = [
     
     {"filter_1": "1º bach a", "filter_2": "ruth paula", "cells": ["1º BACH A", "RUTH / PAULA", "PAULA"]},
     {"filter_1": "1º bach b", "filter_2": "antonia diego", "cells": ["1º BACH B", "ANTONIA", "DIEGO"]},
-    {"filter_1": "1º bach c", "filter_2": "rosi diego", "cells": ["1º BACH C", "ROSI / DIEGO", "ROSI"]},
+    {"filter_1": "1º bach c", "filter_2": "rosi", "cells": ["1º BACH C", "ROSI", "ROSI"]},
 
     # Grupo B
-    {"filter_1": "2º eso a", "filter_2": "miguel artiles cristian", "cells": ["2º ESO A", "MIGUEL ARTILES", "CRISTIAN"]},
-    {"filter_1": "2º eso b", "filter_2": "cristian elizabeth estefanía", "cells": ["2º ESO B", "CRISTIAN / ELIZABETH", "ESTEFANÍA"]},
-    {"filter_1": "2º eso c", "filter_2": "bosco elizabeth", "cells": ["2º ESO C", "BOSCO", "BOSCO / ELIZABETH"]},
+    {"filter_1": "2º eso a", "filter_2": "miguel artiles elizabeth", "cells": ["2º ESO A", "MIGUEL ARTILES", "Elizabeth"]},
+    {"filter_1": "2º eso b", "filter_2": "elizabeth estefanía", "cells": ["2º ESO B", "ELIZABETH", "ESTEFANÍA"]},
+    {"filter_1": "2º eso c", "filter_2": "bosco", "cells": ["2º ESO C", "BOSCO", "BOSCO"]},
     {"filter_1": "2º eso d", "filter_2": "ana válido sut loly nerea", "cells": ["2º ESO D", "ANA VÁLIDO", "SUT LOLY / NEREA"]},
     
-    {"filter_1": "4º eso a", "filter_2": "desireé", "cells": ["4º ESO A", "-", "DESIREÉ"]},
+    {"filter_1": "4º eso a", "filter_2": "almudena desireé", "cells": ["4º ESO A", "Almudena", "DESIREÉ"]},
+    {"filter_1": "4º eso b", "filter_2": "almudena migue", "cells": ["4º ESO B", "Almudena", "Migue"]},
     {"filter_1": "4º eso c", "filter_2": "orlando r.", "cells": ["4º ESO C", "ORLANDO R.", "ORLANDO R."]},
     
     {"filter_1": "2º pdc", "filter_2": "mª elena sergio", "cells": ["2º PDC", "Mª ELENA", "SERGIO"]},
-    {"filter_1": "2º cfgb", "filter_2": "orlando h noemí v.", "cells": ["2º CFGB", "ORLANDO H", "NOEMÍ V."]},
-    {"filter_1": "2º iea", "filter_2": "josé miguel mila", "cells": ["2º IEA", "JOSÉ MIGUEL", "MILA"]},
+    {"filter_1": "2º cfgb", "filter_2": "orlando h mila", "cells": ["2º CFGB", "ORLANDO H", "Mila"]},
+    {"filter_1": "2º iea", "filter_2": "mila", "cells": ["2º IEA", "Mila", "MILA"]},
     {"filter_1": "2º ite", "filter_2": "mila jesús", "cells": ["2º ITE", "MILA", "JESÚS"]},
     
-    {"filter_1": "2º bach a", "filter_2": "ana mata almudena", "cells": ["2º BACH A", "ANA MATA", "ALMUDENA"]},
-    {"filter_1": "2º bach b", "filter_2": "alejandro ana mata", "cells": ["2º BACH B", "ALEJANDRO", "ANA MATA"]},
-    {"filter_1": "2º bach c", "filter_2": "vicky", "cells": ["2º BACH C", "VICKY", "VICKY"]}
+    {"filter_1": "2º bach a", "filter_2": "josé miguel almudena", "cells": ["2º BACH A", "José Miguel", "ALMUDENA"]},
+    {"filter_1": "2º bach b", "filter_2": "josé miguel ana mata", "cells": ["2º BACH B", "José Miguel", "ANA MATA"]},
+    {"filter_1": "2º bach c", "filter_2": "vicky ana mata almudena", "cells": ["2º BACH C", "Vicky", "Ana Mata / Almudena"]}
 ]
 
 acomp_filters_html = '''
