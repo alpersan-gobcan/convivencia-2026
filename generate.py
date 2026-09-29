@@ -15,6 +15,11 @@ def create_html(title, area, groups, data, color_map):
             --white: #ffffff;
             --border: #cbd5e1;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --base-font-size: 16px;
+        }}
+        html {{
+            font-size: var(--base-font-size);
+            transition: font-size 0.3s ease;
         }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }}
         body {{ background-color: #f8fafc; color: var(--text-dark); padding: 2rem; }}
@@ -41,10 +46,46 @@ def create_html(title, area, groups, data, color_map):
     for group, color in color_map.items():
         html += f'        [data-group="{group}"] {{ background-color: {color}; }}\n'
     html += f'''
+        .toolbar {{
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            align-items: center;
+        }}
+        .toolbar button {{
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }}
+        .toolbar button:hover {{
+            background: rgba(255,255,255,0.2);
+        }}
+        @media print {{
+            .toolbar {{ display: none !important; }}
+            .btn-back {{ display: none !important; }}
+            .filter-container {{ display: none !important; }}
+            .mobile-notice {{ display: none !important; }}
+            body {{ padding: 0 !important; }}
+        }}
     </style>
 </head>
 <body>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="toolbar">
+        <span>Tamaño de texto:</span>
+        <button onclick="changeFontSize(-1)">A-</button>
+        <button onclick="changeFontSize(1)">A+</button>
+        <button onclick="window.print()" style="margin-left: 1rem;">🖨️ Imprimir PDF</button>
+    </div>
+    <div style="max-width: 1200px; margin: 1rem auto;">
         <a href="index.html" class="btn-back">← Volver al inicio</a>
     </div>
     <h1>{title}</h1>
@@ -71,6 +112,10 @@ def create_html(title, area, groups, data, color_map):
                 <option value="11:45 - 12:30 h">11:45 - 12:30 h</option>
             </select>
         </div>
+    </div>
+
+    <div class="mobile-notice" style="max-width: 1200px; margin: 0 auto 1rem auto; text-align: center; color: #475569; font-size: 0.9rem; background: #fffbeb; padding: 0.5rem; border-radius: 8px; border: 1px solid #fde68a;">
+        📱 <strong>Nota para móviles:</strong> Puedes deslizar la tabla hacia los lados (↔️) para ver todo el contenido.
     </div>
 
     <div class="table-container">
@@ -126,7 +171,15 @@ def create_html(title, area, groups, data, color_map):
     </div>
 
     <script>
-        function updateRowspans() {
+        let currentFontSize = 16;
+        function changeFontSize(change) {{
+            currentFontSize += change;
+            if (currentFontSize < 12) currentFontSize = 12;
+            if (currentFontSize > 24) currentFontSize = 24;
+            document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+        }}
+
+        function updateRowspans() {{
             const rows = Array.from(document.querySelectorAll('#scheduleTable tbody tr'));
             let currentObs = null;
             let obsRow = null;
