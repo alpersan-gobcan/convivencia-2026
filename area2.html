@@ -21,12 +21,18 @@
         select { padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); font-size: 1rem; cursor: pointer; min-width: 150px; }
         .table-container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
         th { background-color: var(--primary); color: var(--white); }
         .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
         .btn-back:hover { background: #004494; }
         .recreo-row { background-color: #fed7aa !important; font-weight: bold; text-align: center; }
         .zumba-row { background-color: #fbcfe8 !important; font-weight: bold; text-align: center; }
+        
+        .p-0 { padding: 0 !important; vertical-align: top; }
+        .sub-cell { padding: 0.5rem 0; border-bottom: 1px solid var(--border); min-height: 3.5rem; display: flex; align-items: center; }
+        .sub-cell:last-child { border-bottom: none; }
+        .inner-content { padding: 0 1rem; width: 100%; }
+        .dynamic-obs { vertical-align: middle; background-color: #fff; }
         [data-group="1º A BACH"] { background-color: #dcfce7; }
         [data-group="1º B BACH"] { background-color: #ccfbf1; }
         [data-group="1º C BACH"] { background-color: #e0e7ff; }
@@ -97,207 +103,182 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-group="1º A BACH" data-time="9:30 - 10:15 h">
+                <tr data-group="1º A BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>1º A BACH</strong></td>
-                    <td>Salto de comba (9:30-9:50) <br><br> El pañuelito (9:50-10:15)</td>
-                    <td>Almudena <br><br> PAULA</td>
-                    <td><br><br> ROSI</td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto de comba (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">El pañuelito (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Almudena</div></div><div class="sub-cell"><div class="inner-content">PAULA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ROSI</div></div></td>
                 </tr>
-                <tr data-group="1º B BACH" data-time="9:30 - 10:15 h">
+                <tr data-group="1º B BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>1º B BACH</strong></td>
-                    <td>Lanzamiento (9:30-9:50) <br><br> Brile (9:50-10:15)</td>
-                    <td>UAVA <br><br> DIEGO</td>
-                    <td><br><br> VICKY</td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Lanzamiento (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Brile (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">DIEGO</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">VICKY</div></div></td>
                 </tr>
-                <tr data-group="1º C BACH" data-time="9:30 - 10:15 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="1º C BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>1º C BACH</strong></td>
-                    <td>Carrera de saco (9:30-9:50) <br><br> Salto Longitud (9:50-10:15)</td>
-                    <td>Davinia <br><br> UAVA</td>
-                    <td></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Carrera de saco (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Salto Longitud (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Davinia</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="2º A BACH" data-time="9:30 - 10:15 h">
+                <tr data-group="2º A BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>2º A BACH</strong></td>
-                    <td>El pañuelito (9:30-9:50) <br><br> Salto de comba (9:50-10:15)</td>
-                    <td>PAULA <br><br> Almudena</td>
-                    <td>ROSI <br><br></td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">El pañuelito (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Salto de comba (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">PAULA</div></div><div class="sub-cell"><div class="inner-content">Almudena</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ROSI</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="2º B BACH" data-time="9:30 - 10:15 h">
+                <tr data-group="2º B BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>2º B BACH</strong></td>
-                    <td>Brile (9:30-9:50) <br><br> Lanzamiento (9:50-10:15)</td>
-                    <td>DIEGO <br><br> UAVA</td>
-                    <td>VICKY <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Brile (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Lanzamiento (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">DIEGO</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">VICKY</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="2º C BACH" data-time="9:30 - 10:15 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="2º C BACH" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>2º C BACH</strong></td>
-                    <td>Salto Longitud (9:30-9:50) <br><br> Carrera de saco (9:50-10:15)</td>
-                    <td>UAVA <br><br> Davinia</td>
-                    <td></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto Longitud (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Carrera de saco (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">Davinia</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="CICLOS" data-time="9:30 - 10:15 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="CICLOS" data-time="9:30 - 10:15 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>CICLOS</strong></td>
-                    <td>Salto de comba (9:30-9:50) <br><br> Juego de palabras (9:50-10:15)</td>
-                    <td>Almudena <br><br> ORLANDO R.</td>
-                    <td><br><br> ANA MATA</td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto de comba (9:30-9:50)</div></div><div class="sub-cell"><div class="inner-content">Juego de palabras (9:50-10:15)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Almudena</div></div><div class="sub-cell"><div class="inner-content">ORLANDO R.</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ANA MATA</div></div></td>
                 </tr>
-                <tr data-group="4º ESO (Todos)" data-time="9:30 - 10:15 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="4º ESO (Todos)" data-time="9:30 - 10:15 h" data-obs="Ayudar al monitor de DAMASI y mojarte.<br>Que se quiera mojarse que contacte con Jose Fran para cubrir su función" style="border-bottom: 2px solid #64748b;">
                     <td>9:30 - 10:15 h</td>
                     <td><strong>4º ESO (Todos)</strong></td>
-                    <td>Hinchables acuáticos</td>
-                    <td>DAMASI/</td>
-                    <td>Jose Fran Docente .que se quiera mojarse que contacte con Jose Fran ( para cubrir su función )</td>
-                    <td><small>Ayudar al monitor de DAMASI y mojarte</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Hinchables acuáticos</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">DAMASI/</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Jose Fran (Docente)</div></div></td>
                 </tr>
                 <tr class="recreo-row" data-group="all" data-time="10:15 - 10:45 h"><td colspan="6">10:15 - 10:45 h - RECREO</td></tr>
                 <tr class="zumba-row" data-group="all" data-time="10:30 - 11:00 h" style="border-bottom: 2px solid var(--primary);"><td colspan="6">10:30 - 11:00 h - ZUMBA</td></tr>
-                <tr data-group="1º A BACH" data-time="11:00 - 11:40 h">
+                <tr data-group="1º A BACH" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>1º A BACH</strong></td>
-                    <td>Lanzamiento (11:00-11:20) <br><br> Brile (11:20-11:40)</td>
-                    <td>UAVA <br><br> DIEGO</td>
-                    <td><br><br> VICKY</td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Lanzamiento (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Brile (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">DIEGO</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">VICKY</div></div></td>
                 </tr>
-                <tr data-group="1º B BACH" data-time="11:00 - 11:40 h">
+                <tr data-group="1º B BACH" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>1º B BACH</strong></td>
-                    <td>Carrera de Saco (11:00-11:20) <br><br> Salto Longitud (11:20-11:40)</td>
-                    <td>Davinia <br><br> UAVA</td>
-                    <td>Jose Fran <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Carrera de Saco (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Salto Longitud (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Davinia</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Jose Fran</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="1º C BACH" data-time="11:00 - 11:40 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="1º C BACH" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>1º C BACH</strong></td>
-                    <td>Juego de palabras (11:00-11:20) <br><br> Salto de comba (11:20-11:40)</td>
-                    <td>ORLANDO R. <br><br> Almudena</td>
-                    <td>ANA MATA <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Juego de palabras (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Salto de comba (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ORLANDO R.</div></div><div class="sub-cell"><div class="inner-content">Almudena</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ANA MATA</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="2º BACH + CICLOS" data-time="11:00 - 11:40 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="2º BACH + CICLOS" data-time="11:00 - 11:40 h" data-obs="Ayudar al monitor de DAMASI y mojarte.<br>Contactar con Jose Fran para cubrir su función" style="border-bottom: 2px solid #64748b;">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>2º BACH + CICLOS</strong></td>
-                    <td>Hinchables Acuáticos</td>
-                    <td>Damasi</td>
-                    <td>Docente que se quiera mojarse que contacte con Jose Fran ( para cubrir su función)</td>
-                    <td><small>Ayudar al monitor de DAMASI y mojarte</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Hinchables Acuáticos</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Damasi</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Docente que se quiera mojar</div></div></td>
                 </tr>
-                <tr data-group="4ºA ESO" data-time="11:00 - 11:40 h">
+                <tr data-group="4ºA ESO" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>4ºA ESO</strong></td>
-                    <td>Salto de comba (11:00-11:20) <br><br> El pañuelito (11:20-11:40)</td>
-                    <td>Almudena <br><br> PAULA</td>
-                    <td><br><br> ROSI</td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto de comba (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">El pañuelito (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Almudena</div></div><div class="sub-cell"><div class="inner-content">PAULA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ROSI</div></div></td>
                 </tr>
-                <tr data-group="4ºB ESO" data-time="11:00 - 11:40 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="4ºB ESO" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>4ºB ESO</strong></td>
-                    <td>Brile (11:00-11:20) <br><br> Lanzamiento (11:20-11:40)</td>
-                    <td>DIEGO <br><br> UAVA</td>
-                    <td>VICKY <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Brile (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Lanzamiento (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">DIEGO</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">VICKY</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="4ºC ESO" data-time="11:00 - 11:40 h">
+                <tr data-group="4ºC ESO" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>4ºC ESO</strong></td>
-                    <td>Carrera de saco (11:00-11:20) <br><br> Salto Longitud (11:20-11:40)</td>
-                    <td>Davinia <br><br> UAVA</td>
-                    <td></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Carrera de saco (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Salto Longitud (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Davinia</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="4ºD ESO" data-time="11:00 - 11:40 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="4ºD ESO" data-time="11:00 - 11:40 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:00 - 11:40 h</td>
                     <td><strong>4ºD ESO</strong></td>
-                    <td>Salto de comba (11:00-11:20) <br><br> Juego de palabras (11:20-11:40)</td>
-                    <td>Almudena <br><br> ORLANDO R.</td>
-                    <td><br><br> ANA MATA</td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto de comba (11:00-11:20)</div></div><div class="sub-cell"><div class="inner-content">Juego de palabras (11:20-11:40)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Almudena</div></div><div class="sub-cell"><div class="inner-content">ORLANDO R.</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ANA MATA</div></div></td>
                 </tr>
-                <tr data-group="1º BACH (Todos)" data-time="11:45 - 12:30 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="1º BACH (Todos)" data-time="11:45 - 12:30 h" data-obs="Ayudar al monitor de DAMASI y mojarte.<br>Contactar con Jose Fran para cubrir su función" style="border-bottom: 2px solid #64748b;">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>1º BACH (Todos)</strong></td>
-                    <td>Hinchables Acuáticos</td>
-                    <td>Damasi/ Almudena</td>
-                    <td>Docente que se quiera mojarse que contacte con Jose Fran ( para cubrir su función )</td>
-                    <td><small>Ayudar al monitor de DAMASI y mojarte</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Hinchables Acuáticos</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Damasi/ Almudena</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Docente que se quiera mojar</div></div></td>
                 </tr>
-                <tr data-group="2º A BACH" data-time="11:45 - 12:30 h">
+                <tr data-group="2º A BACH" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>2º A BACH</strong></td>
-                    <td>Lanzamiento (11:45-12:05) <br><br> Braile (12:05-12:30)</td>
-                    <td>UAVA <br><br> DIEGO</td>
-                    <td><br><br> VICKY</td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Lanzamiento (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Braile (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">DIEGO</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">VICKY</div></div></td>
                 </tr>
-                <tr data-group="2º B BACH" data-time="11:45 - 12:30 h">
+                <tr data-group="2º B BACH" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>2º B BACH</strong></td>
-                    <td>Carrera de Saco (11:45-12:05) <br><br> Salto Longitud (12:05-12:30)</td>
-                    <td>Davinia <br><br> UAVA</td>
-                    <td></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Carrera de Saco (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Salto Longitud (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Davinia</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="2º C BACH" data-time="11:45 - 12:30 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="2º C BACH" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>2º C BACH</strong></td>
-                    <td>Juego de palabras (11:45-12:05) <br><br> Salto Comba (12:05-12:30)</td>
-                    <td>ORLANDO R. <br><br> Almudena</td>
-                    <td>ANA MATA <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Juego de palabras (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Salto Comba (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ORLANDO R.</div></div><div class="sub-cell"><div class="inner-content">Almudena</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ANA MATA</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="CICLOS" data-time="11:45 - 12:30 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="CICLOS" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>CICLOS</strong></td>
-                    <td>Pañuelito (11:45-12:05) <br><br> Lanzamiento (12:05-12:30)</td>
-                    <td>PAULA <br><br> UAVA</td>
-                    <td>ROSI <br><br></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Pañuelito (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Lanzamiento (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">PAULA</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">ROSI</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="4ºA ESO" data-time="11:45 - 12:30 h">
+                <tr data-group="4ºA ESO" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>4ºA ESO</strong></td>
-                    <td>Braile (11:45-12:05) <br><br> Lanzamiento (12:05-12:30)</td>
-                    <td>DIEGO <br><br> UAVA</td>
-                    <td>VICKY <br><br></td>
-                    <td><small>-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad. <br><br> -El docente ayudante se coordina con el monitor para hacer turnos de descanso.</small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Braile (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Lanzamiento (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">DIEGO</div></div><div class="sub-cell"><div class="inner-content">UAVA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">VICKY</div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="4ºB ESO" data-time="11:45 - 12:30 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="4ºB ESO" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>4ºB ESO</strong></td>
-                    <td>Salto Longitud (11:45-12:05) <br><br> Carrera de Saco (12:05-12:30)</td>
-                    <td>UAVA <br><br> Davinia</td>
-                    <td></td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto Longitud (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Carrera de Saco (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">Davinia</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content"></div></div></td>
                 </tr>
-                <tr data-group="4ºC ESO" data-time="11:45 - 12:30 h">
+                <tr data-group="4ºC ESO" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso.">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>4ºC ESO</strong></td>
-                    <td>Salto Comba (11:45-12:05) <br><br> Juego de palabras (12:05-12:30)</td>
-                    <td>Almudena <br><br> ORLANDO R.</td>
-                    <td><br><br> ANA MATA</td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Salto Comba (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">Juego de palabras (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Almudena</div></div><div class="sub-cell"><div class="inner-content">ORLANDO R.</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ANA MATA</div></div></td>
                 </tr>
-                <tr data-group="4ºD ESO" data-time="11:45 - 12:30 h" style="border-bottom: 2px solid #64748b;">
+                <tr data-group="4ºD ESO" data-time="11:45 - 12:30 h" data-obs="-El monitor controla que esté el grupo que pertenece. Y junto al docente ayudante dinamizamos la actividad.<br><br>-El docente ayudante se coordina con el monitor para hacer turnos de descanso." style="border-bottom: 2px solid #64748b;">
                     <td>11:45 - 12:30 h</td>
                     <td><strong>4ºD ESO</strong></td>
-                    <td>Lanzamiento (11:45-12:05) <br><br> El pañuelito (12:05-12:30)</td>
-                    <td>UAVA <br><br> PAULA</td>
-                    <td><br><br> ROSI</td>
-                    <td><small></small></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">Lanzamiento (11:45-12:05)</div></div><div class="sub-cell"><div class="inner-content">El pañuelito (12:05-12:30)</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content">UAVA</div></div><div class="sub-cell"><div class="inner-content">PAULA</div></div></td>
+                    <td class="p-0"><div class="sub-cell"><div class="inner-content"></div></div><div class="sub-cell"><div class="inner-content">ROSI</div></div></td>
                 </tr>
 
             </tbody>
@@ -305,6 +286,46 @@
     </div>
 
     <script>
+        function updateRowspans() {
+            const rows = Array.from(document.querySelectorAll('#scheduleTable tbody tr'));
+            let currentObs = null;
+            let obsRow = null;
+            let spanCount = 0;
+
+            // Remove all existing dynamic obs cells
+            document.querySelectorAll('.dynamic-obs').forEach(el => el.remove());
+
+            rows.forEach(row => {
+                if (row.style.display === 'none') return;
+                
+                if (row.classList.contains('recreo-row') || row.classList.contains('zumba-row')) {
+                    currentObs = null;
+                    return;
+                }
+
+                const obs = row.getAttribute('data-obs');
+                if (!obs) {
+                    currentObs = null;
+                    return;
+                }
+
+                if (obs !== currentObs || currentObs === null) {
+                    currentObs = obs;
+                    spanCount = 1;
+                    obsRow = row;
+                    const td = document.createElement('td');
+                    td.className = 'dynamic-obs';
+                    td.innerHTML = '<small>' + obs + '</small>';
+                    row.appendChild(td);
+                } else {
+                    spanCount++;
+                    if (obsRow) {
+                        obsRow.querySelector('.dynamic-obs').setAttribute('rowspan', spanCount);
+                    }
+                }
+            });
+        }
+
         function filterTable() {
             const courseFilter = document.getElementById('courseFilter').value.toLowerCase();
             const timeFilter = document.getElementById('timeFilter').value;
@@ -343,7 +364,14 @@
                     row.style.display = 'none';
                 }
             });
+
+            updateRowspans();
         }
+
+        // Initialize on load
+        window.onload = function() {
+            updateRowspans();
+        };
     </script>
 </body>
 </html>
