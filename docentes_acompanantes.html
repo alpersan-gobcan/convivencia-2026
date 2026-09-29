@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docentes que Acompañan</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+            --border: #cbd5e1;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); padding: 2rem; }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; margin-bottom: 2rem; font-weight: 500; color: #475569; }
+        .filter-container { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+        select, input { padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); font-size: 1rem; cursor: pointer; min-width: 150px; }
+        .table-container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow-x: auto; margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { background-color: var(--primary); color: var(--white); }
+        .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .btn-back:hover { background: #004494; }
+        .row-alt { background-color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <a href="index.html" class="btn-back">← Volver al inicio</a>
+    </div>
+    <h1>Docentes que Acompañan</h1>
+    <div class="subtitle">Asignación de docentes para la salida y el regreso</div>
+    
+    <div class="filter-container">
+        
+    <div class="filter-group">
+        <label for="grupoFilter" style="font-weight: bold;">Grupo:</label>
+        <select id="grupoFilter" onchange="filterTable()">
+            <option value="all">Todos los grupos</option>
+            <option value="1º eso">1º ESO</option>
+            <option value="2º eso">2º ESO</option>
+            <option value="3º eso">3º ESO</option>
+            <option value="4º eso">4º ESO</option>
+            <option value="bach">Bachillerato</option>
+            <option value="pdc">PDC</option>
+            <option value="cfgb">CFGB</option>
+            <option value="ele">ELE</option>
+            <option value="ite">ITE</option>
+            <option value="iea">IEA</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
+        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+    </div>
+
+    </div>
+
+    <div class="table-container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Grupo</th>
+                    <th>Responsables Salida (8:30 / 8:45)</th>
+                    <th>Responsables Regreso (13:00 / 13:10)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="" data-filter-1="1º eso a" data-filter-2="rosalva ana teresa marifé" data-filter-3="">
+                    <td>1º ESO A</td>
+                    <td>ROSALVA / ANA TERESA</td>
+                    <td>MARIFÉ / ANA TERESA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="1º eso b" data-filter-2="ángeles" data-filter-3="">
+                    <td>1º ESO B</td>
+                    <td>ÁNGELES</td>
+                    <td>ÁNGELES</td>
+                </tr>
+                <tr class="" data-filter-1="1º eso c" data-filter-2="loly elena" data-filter-3="">
+                    <td>1º ESO C</td>
+                    <td>LOLY</td>
+                    <td>ELENA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="1º eso d" data-filter-2="ciro" data-filter-3="">
+                    <td>1º ESO D</td>
+                    <td>CIRO</td>
+                    <td>CIRO</td>
+                </tr>
+                <tr class="" data-filter-1="3º eso a" data-filter-2="silvia elicia" data-filter-3="">
+                    <td>3º ESO A</td>
+                    <td>SILVIA</td>
+                    <td>ELICIA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="3º eso b" data-filter-2="sixto monroy" data-filter-3="">
+                    <td>3º ESO B</td>
+                    <td>SIXTO</td>
+                    <td>MONROY</td>
+                </tr>
+                <tr class="" data-filter-1="3º eso c" data-filter-2="rita silvia" data-filter-3="">
+                    <td>3º ESO C</td>
+                    <td>RITA</td>
+                    <td>SILVIA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="3º eso d" data-filter-2="coralia" data-filter-3="">
+                    <td>3º ESO D</td>
+                    <td>CORALIA</td>
+                    <td>CORALIA</td>
+                </tr>
+                <tr class="" data-filter-1="1º pdc" data-filter-2="alberto rosalva" data-filter-3="">
+                    <td>1º PDC</td>
+                    <td>ALBERTO</td>
+                    <td>ROSALVA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="1º cfgb" data-filter-2="migue orlando h." data-filter-3="">
+                    <td>1º CFGB</td>
+                    <td>MIGUE</td>
+                    <td>ORLANDO H.</td>
+                </tr>
+                <tr class="" data-filter-1="1º ele" data-filter-2="pedro yaiza" data-filter-3="">
+                    <td>1º ELE</td>
+                    <td>PEDRO</td>
+                    <td>YAIZA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="1º ite" data-filter-2="mónica díaz miguel ángel moreno" data-filter-3="">
+                    <td>1º ITE</td>
+                    <td>MÓNICA DÍAZ</td>
+                    <td>MIGUEL ÁNGEL MORENO</td>
+                </tr>
+                <tr class="" data-filter-1="1º bach a" data-filter-2="ruth paula" data-filter-3="">
+                    <td>1º BACH A</td>
+                    <td>RUTH / PAULA</td>
+                    <td>PAULA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="1º bach b" data-filter-2="antonia diego" data-filter-3="">
+                    <td>1º BACH B</td>
+                    <td>ANTONIA</td>
+                    <td>DIEGO</td>
+                </tr>
+                <tr class="" data-filter-1="1º bach c" data-filter-2="rosi diego" data-filter-3="">
+                    <td>1º BACH C</td>
+                    <td>ROSI / DIEGO</td>
+                    <td>ROSI</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º eso a" data-filter-2="miguel artiles cristian" data-filter-3="">
+                    <td>2º ESO A</td>
+                    <td>MIGUEL ARTILES</td>
+                    <td>CRISTIAN</td>
+                </tr>
+                <tr class="" data-filter-1="2º eso b" data-filter-2="cristian elizabeth estefanía" data-filter-3="">
+                    <td>2º ESO B</td>
+                    <td>CRISTIAN / ELIZABETH</td>
+                    <td>ESTEFANÍA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º eso c" data-filter-2="bosco elizabeth" data-filter-3="">
+                    <td>2º ESO C</td>
+                    <td>BOSCO</td>
+                    <td>BOSCO / ELIZABETH</td>
+                </tr>
+                <tr class="" data-filter-1="2º eso d" data-filter-2="ana válido sut loly nerea" data-filter-3="">
+                    <td>2º ESO D</td>
+                    <td>ANA VÁLIDO</td>
+                    <td>SUT LOLY / NEREA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="4º eso a" data-filter-2="desireé" data-filter-3="">
+                    <td>4º ESO A</td>
+                    <td>-</td>
+                    <td>DESIREÉ</td>
+                </tr>
+                <tr class="" data-filter-1="4º eso c" data-filter-2="orlando r." data-filter-3="">
+                    <td>4º ESO C</td>
+                    <td>ORLANDO R.</td>
+                    <td>ORLANDO R.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º pdc" data-filter-2="mª elena sergio" data-filter-3="">
+                    <td>2º PDC</td>
+                    <td>Mª ELENA</td>
+                    <td>SERGIO</td>
+                </tr>
+                <tr class="" data-filter-1="2º cfgb" data-filter-2="orlando h noemí v." data-filter-3="">
+                    <td>2º CFGB</td>
+                    <td>ORLANDO H</td>
+                    <td>NOEMÍ V.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º iea" data-filter-2="josé miguel mila" data-filter-3="">
+                    <td>2º IEA</td>
+                    <td>JOSÉ MIGUEL</td>
+                    <td>MILA</td>
+                </tr>
+                <tr class="" data-filter-1="2º ite" data-filter-2="mila jesús" data-filter-3="">
+                    <td>2º ITE</td>
+                    <td>MILA</td>
+                    <td>JESÚS</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º bach a" data-filter-2="ana mata almudena" data-filter-3="">
+                    <td>2º BACH A</td>
+                    <td>ANA MATA</td>
+                    <td>ALMUDENA</td>
+                </tr>
+                <tr class="" data-filter-1="2º bach b" data-filter-2="alejandro ana mata" data-filter-3="">
+                    <td>2º BACH B</td>
+                    <td>ALEJANDRO</td>
+                    <td>ANA MATA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º bach c" data-filter-2="vicky" data-filter-3="">
+                    <td>2º BACH C</td>
+                    <td>VICKY</td>
+                    <td>VICKY</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+    function filterTable() {
+        const grupoF = document.getElementById('grupoFilter').value;
+        const docF = document.getElementById('docenteFilter').value.toLowerCase();
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(row => {
+            const rowGrupo = row.getAttribute('data-filter-1');
+            const rowDoc = row.getAttribute('data-filter-2');
+            
+            const matchGrupo = (grupoF === 'all' || rowGrupo.includes(grupoF));
+            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            if (matchGrupo && matchDoc) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardias en el Centro</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+            --border: #cbd5e1;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); padding: 2rem; }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; margin-bottom: 2rem; font-weight: 500; color: #475569; }
+        .filter-container { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+        select, input { padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); font-size: 1rem; cursor: pointer; min-width: 150px; }
+        .table-container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow-x: auto; margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { background-color: var(--primary); color: var(--white); }
+        .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .btn-back:hover { background: #004494; }
+        .row-alt { background-color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <a href="index.html" class="btn-back">← Volver al inicio</a>
+    </div>
+    <h1>Guardias en el Centro</h1>
+    <div class="subtitle">Docentes que se quedan en el centro de guardia</div>
+    
+    <div class="filter-container">
+        
+    <div class="filter-group">
+        <label for="nivelFilter" style="font-weight: bold;">Nivel/Curso:</label>
+        <select id="nivelFilter" onchange="filterTable()">
+            <option value="all">Todos los niveles</option>
+            <option value="1º eso">1º ESO</option>
+            <option value="2º eso">2º ESO</option>
+            <option value="3º eso">3º ESO + 1º PDC</option>
+            <option value="4º eso">4º ESO + 2º PDC</option>
+            <option value="bachill">Bachillerato</option>
+            <option value="cfgb">Ciclos (CFGB+CFGM)</option>
+            <option value="mesa">Mesa Guardia</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
+        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+    </div>
+
+    </div>
+
+    <div class="table-container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Nivel</th>
+                    <th>1ª H</th>
+                    <th>2ª H</th>
+                    <th>3ª H</th>
+                    <th>Guardia Recreo</th>
+                    <th>4ª H</th>
+                    <th>5ª H</th>
+                    <th>6ª H</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="" data-filter-1="1º eso" data-filter-2="sonia mari pino rosario fernando david" data-filter-3="">
+                    <td>1º ESO</td>
+                    <td>SONIA A 20</td>
+                    <td>SONIA A20</td>
+                    <td>MARI PINO A20</td>
+                    <td>ROSARIO BIBLIOTECA</td>
+                    <td>FERNANDO A20</td>
+                    <td>DAVID A20</td>
+                    <td>ROSARIO A20 O SALÓN ACTOS</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="2º eso" data-filter-2="rosario mari pino mónica s. julia fernando" data-filter-3="">
+                    <td>2º ESO</td>
+                    <td>ROSARIO SALÓN ACTOS</td>
+                    <td>MARI PINO A21</td>
+                    <td>ROSARIO A21</td>
+                    <td>MÓNICA S. PASILLO Y JARDÍN INFERIOR</td>
+                    <td>JULIA A21</td>
+                    <td>JULIA A21</td>
+                    <td>FERNANDO A21</td>
+                </tr>
+                <tr class="" data-filter-1="3º eso+1º pdc" data-filter-2="antonio sonia fernando antonia bruno naira" data-filter-3="">
+                    <td>3º ESO+1º PDC</td>
+                    <td>ANTONIO A22</td>
+                    <td>ANTONIO A22</td>
+                    <td>SONIA A22 O SALÓN ACTOS</td>
+                    <td></td>
+                    <td>FERNANDO A22</td>
+                    <td>ANTONIA A22</td>
+                    <td>BAJAN A JARDÍN CON BRUNO Y NAIRA</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="4º eso+2º pdc" data-filter-2="mari pino mónica s. david baño david ruth" data-filter-3="">
+                    <td>4º ESO+2º PDC</td>
+                    <td>MARI PINO A23</td>
+                    <td>MÓNICA S. A23 O SALON ACTOS</td>
+                    <td>MÓNICA S. A23</td>
+                    <td>DAVID BAÑO EXT.</td>
+                    <td>DAVID A22</td>
+                    <td>RUTH A23</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="bachill" data-filter-2="josé báez antonio nizamar" data-filter-3="">
+                    <td>BACHILL.</td>
+                    <td>JOSÉ BÁEZ A24</td>
+                    <td>JOSÉ BÁEZ A24</td>
+                    <td>ANTONIO A24</td>
+                    <td></td>
+                    <td>NIZAMAR A24</td>
+                    <td>NIZAMAR A24 O SALÓN ACTOS</td>
+                    <td></td>
+                </tr>
+                <tr class="row-alt" data-filter-1="cfgb+cfgm" data-filter-2="tecenery ana medina naira bruno" data-filter-3="">
+                    <td>CFGB+CFGM</td>
+                    <td>TECENERY A26</td>
+                    <td>ANA MEDINA A26</td>
+                    <td>NAIRA A26</td>
+                    <td>GUARDIA JARDÍN NAIRA</td>
+                    <td>NAIRA A26 O SALÓN A.</td>
+                    <td>BRUNO A26</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="mesa guardia" data-filter-2="ana medina tecenery elicia julia fernando david lidia mónica s ruth nizamar" data-filter-3="">
+                    <td>MESA GUARDIA</td>
+                    <td>ANA MEDINA</td>
+                    <td>TECENERY ELICIA</td>
+                    <td>JULIA FERNANDO</td>
+                    <td>FERNANDO</td>
+                    <td>DAVID LIDIA</td>
+                    <td>MÓNICA S RUTH</td>
+                    <td>NIZAMAR</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+    function filterTable() {
+        const nivelF = document.getElementById('nivelFilter').value;
+        const docF = document.getElementById('docenteFilter').value.toLowerCase();
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(row => {
+            const rowNivel = row.getAttribute('data-filter-1');
+            const rowDoc = row.getAttribute('data-filter-2');
+            
+            const matchNivel = (nivelF === 'all' || rowNivel.includes(nivelF));
+            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            if (matchNivel && matchDoc) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    </script>
+</body>
+</html>

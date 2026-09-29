@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardias en el Estadio</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+            --border: #cbd5e1;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: var(--text-dark); padding: 2rem; }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; margin-bottom: 2rem; font-weight: 500; color: #475569; }
+        .filter-container { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+        select, input { padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); font-size: 1rem; cursor: pointer; min-width: 150px; }
+        .table-container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); overflow-x: auto; margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { background-color: var(--primary); color: var(--white); }
+        .btn-back { display: inline-block; margin-bottom: 1rem; padding: 0.5rem 1rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .btn-back:hover { background: #004494; }
+        .row-alt { background-color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <a href="index.html" class="btn-back">← Volver al inicio</a>
+    </div>
+    <h1>Guardias en el Estadio</h1>
+    <div class="subtitle">Estadio Municipal de Vecindario - 09/10/2026</div>
+    
+    <div class="filter-container">
+        
+    <div class="filter-group">
+        <label for="timeFilter" style="font-weight: bold;">Franja Horaria:</label>
+        <select id="timeFilter" onchange="filterTable()">
+            <option value="all">Todas las franjas</option>
+            <option value="9:00 a 10:15">9:00 a 10:15 H</option>
+            <option value="10:15 a 11:00">10:15 a 11:00 H</option>
+            <option value="11:00 a 11:45">11:00 a 11:45 H</option>
+            <option value="11:45 a 12:30">11:45 a 12:30 H</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label for="docenteFilter" style="font-weight: bold;">Docente:</label>
+        <input type="text" id="docenteFilter" placeholder="Buscar docente..." onkeyup="filterTable()">
+    </div>
+
+    </div>
+
+    <div class="table-container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Franja horaria</th>
+                    <th>Zonas</th>
+                    <th>Docentes</th>
+                    <th>Observaciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="antonia alberto" data-filter-3="entrada">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Entrada y Salida del Estadio</td>
+                    <td>Antonia y Alberto</td>
+                    <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="miguel artiles" data-filter-3="escalinatas">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Zona de Escalinatas</td>
+                    <td>Miguel Artiles</td>
+                    <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
+                </tr>
+                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="mónica díaz" data-filter-3="área 1">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Área 1</td>
+                    <td>Mónica Díaz</td>
+                    <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="pedro" data-filter-3="área 2">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Área 2</td>
+                    <td>Pedro</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="9:00 a 10:15" data-filter-2="rita" data-filter-3="centro">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Zona Centro</td>
+                    <td>Rita</td>
+                    <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="9:00 a 10:15" data-filter-2="ruth" data-filter-3="baños">
+                    <td>9:00 a 10:15 H</td>
+                    <td>Baños</td>
+                    <td>Ruth</td>
+                    <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
+                </tr>
+                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="josé miguel" data-filter-3="entrada">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Entrada y Salida del Estadio</td>
+                    <td>José Miguel</td>
+                    <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="mila" data-filter-3="escalinatas">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Zona de Escalinatas</td>
+                    <td>Mila</td>
+                    <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
+                </tr>
+                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="mª elena" data-filter-3="área 1">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Área 1</td>
+                    <td>Mª Elena</td>
+                    <td>El alumnado debe de estar en las gradas para desayunar y luego a la zumba hasta el comienzo de las actividades.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="orlando h." data-filter-3="área 2">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Área 2</td>
+                    <td>Orlando H.</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="10:15 a 11:00" data-filter-2="irene" data-filter-3="centro">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Zona Centro</td>
+                    <td>Irene</td>
+                    <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="10:15 a 11:00" data-filter-2="pedro" data-filter-3="baños">
+                    <td>10:15 a 11:00 H (Recreo)</td>
+                    <td>Baños</td>
+                    <td>Pedro</td>
+                    <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
+                </tr>
+                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="miguel ángel moreno desireé" data-filter-3="entrada">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Entrada y Salida del Estadio</td>
+                    <td>Miguel Ángel Moreno y Desireé</td>
+                    <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="jesús" data-filter-3="escalinatas">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Zona de Escalinatas</td>
+                    <td>Jesús</td>
+                    <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
+                </tr>
+                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="mila" data-filter-3="área 1">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Área 1</td>
+                    <td>Mila</td>
+                    <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="yaiza" data-filter-3="área 2">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Área 2</td>
+                    <td>Yaiza</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="11:00 a 11:45" data-filter-2="noemi v." data-filter-3="centro">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Zona Centro</td>
+                    <td>Noemi V.</td>
+                    <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:00 a 11:45" data-filter-2="nerea" data-filter-3="baños">
+                    <td>11:00 a 11:45 H</td>
+                    <td>Baños</td>
+                    <td>Nerea</td>
+                    <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
+                </tr>
+                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="orlando h. yaiza" data-filter-3="entrada">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Entrada y Salida del Estadio</td>
+                    <td>Orlando H. y Yaiza</td>
+                    <td>-Controlar que no salga ningún alumnado del Estadio.<br>-No se permite que ningún tutor legal retire al alumnado del Estadio.</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="jesús" data-filter-3="escalinatas">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Zona de Escalinatas</td>
+                    <td>Jesús</td>
+                    <td>-Esta zona no es transitable, el alumnado no puede pasar de esta zona.</td>
+                </tr>
+                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="miguel ángel moreno" data-filter-3="área 1">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Área 1</td>
+                    <td>Miguel Ángel Moreno</td>
+                    <td>-Controlar que las actividades se estén llevando con normalidad...<br>-Controlar que las gradas esté todo en orden<br>-Si un docente-monitor necesita descansar...</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="noemi v." data-filter-3="área 2">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Área 2</td>
+                    <td>Noemi V.</td>
+                    <td></td>
+                </tr>
+                <tr class="" data-filter-1="11:45 a 12:30" data-filter-2="mila" data-filter-3="centro">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Zona Centro</td>
+                    <td>Mila</td>
+                    <td>- Zona entre áreas, baño y zumba. controlar su tránsito</td>
+                </tr>
+                <tr class="row-alt" data-filter-1="11:45 a 12:30" data-filter-2="desireé" data-filter-3="baños">
+                    <td>11:45 a 12:30 H</td>
+                    <td>Baños</td>
+                    <td>Desireé</td>
+                    <td>-Controlar el acceso al baño y revisar que no lo dejen en mal estado</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+    function filterTable() {
+        const timeF = document.getElementById('timeFilter').value;
+        const docF = document.getElementById('docenteFilter').value.toLowerCase();
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(row => {
+            const rowTime = row.getAttribute('data-filter-1');
+            const rowDoc = row.getAttribute('data-filter-2');
+            
+            const matchTime = (timeF === 'all' || rowTime.includes(timeF));
+            const matchDoc = (docF === '' || rowDoc.includes(docF));
+            
+            if (matchTime && matchDoc) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    </script>
+</body>
+</html>
