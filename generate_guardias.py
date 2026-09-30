@@ -159,8 +159,6 @@ def create_html(title, description, headers, data, filters_html, filter_js, colo
         <p style="margin-top: 1rem;"><strong>A LAS 11:05 SE RECOGE EN PISTA DE ATLETISMO:</strong><br>
         N (JOSÉ MIGUEL, VICKY)<br>
         O (PEDRO, ANA VÁLIDO, Mª ELENA)</p>
-        
-        <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">Nota: Cristian va en coche</p>
     </div>
 '''
     elif "centro" in title.lower():
