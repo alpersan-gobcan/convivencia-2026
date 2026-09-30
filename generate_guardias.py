@@ -139,7 +139,7 @@ def create_html(title, description, headers, data, filters_html, filter_js, colo
     </div>
 '''
 
-    if "docentes_acompanantes" in title.lower() or "centro" in title.lower():
+    if "docentes que acompañan" in title.lower() or "docentes_acompañantes" in title.lower():
         html += '''
     <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
         <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información Interna (Profesorado de Guardia)</h3>
@@ -161,6 +161,30 @@ def create_html(title, description, headers, data, filters_html, filter_js, colo
         O (PEDRO, ANA VÁLIDO, Mª ELENA)</p>
         
         <p style="margin-top: 1rem; color: #dc2626; font-weight: 600;">Nota: Cristian va en coche</p>
+    </div>
+'''
+    elif "centro" in title.lower():
+        html += '''
+    <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información sobre Organización en el Centro</h3>
+        
+        <p style="margin-bottom: 1rem;"><strong>TODO EL ALUMNADO DEL MISMO NIVEL SERÁ AGRUPADO EN LA MISMA AULA DURANTE TODA LA JORNADA, EXISTIENDO LA POSIBILIDAD DE EN LA HORA SEÑALADA LLEVARLOS AL SALÓN DE ACTOS PARA QUE ESTÉN CON AIRE ACONDICIONADO.</strong></p>
+        
+        <p><strong>LA DISTRIBUCIÓN DE AULAS SERÁ:</strong><br>
+        1º ESO: A20<br>
+        2º ESO: A21<br>
+        3º ESO: A22<br>
+        4º ESO: A23<br>
+        BACHILLERATOS: A24<br>
+        CICLOS: A26</p>
+        
+        <p style="margin-top: 1rem;">TODO ESE ALUMNADO USARÁ LOS BAÑOS DE LA PLANTA 1 DEL EDIFICIO 1.</p>
+        
+        <p style="margin-top: 1rem; font-weight: 600;">LOS EDIFICIOS 2, 3 Y TALLERES PERMANECERÁN CERRADOS DURANTE LA JORNADA.</p>
+        
+        <p style="margin-top: 1rem;"><strong>LAS ZONAS DE RECREO SERÁN:</strong><br>
+        BIBLIOTECA, JARDÍN Y PASILLO INFERIOR.<br>
+        <span style="color: #dc2626; font-weight: 600;">ESTARÁN CERRADAS: CANCHAS Y TRASERA TALLERES.</span></p>
     </div>
 '''
 
