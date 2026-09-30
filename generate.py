@@ -179,7 +179,35 @@ def create_html(title, area, groups, data, color_map):
             </tbody>
         </table>
     </div>
+'''
+    if "Área 1" in title:
+        html += '''
+    <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información de Coordinación</h3>
+        <p><strong>Encargado/a de zona:</strong> Elena y Migue</p>
+        <p style="margin-top: 1rem;"><strong>Docentes coordinadores de nivel:</strong></p>
+        <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+            <li><strong>1º ESO:</strong> Elena</li>
+            <li><strong>2º ESO + Aula Enclave:</strong> Coralia, Raúl y Samira</li>
+            <li><strong>3º ESO:</strong> Migue</li>
+        </ul>
+    </div>
+'''
+    elif "Área 2" in title:
+        html += '''
+    <div style="max-width: 1200px; margin: 2rem auto; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow); font-size: 0.95rem; line-height: 1.6;">
+        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">📌 Información de Coordinación</h3>
+        <p><strong>Encargado/a de zona:</strong> Almudena y Jose Fran</p>
+        <p style="margin-top: 1rem;"><strong>Docentes coordinadores de nivel:</strong></p>
+        <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+            <li><strong>4º ESO:</strong> Jose Fran</li>
+            <li><strong>1º BACH:</strong> Almudena</li>
+            <li><strong>2º BACH + CICLOS:</strong> Davinia</li>
+        </ul>
+    </div>
+'''
 
+    html += '''
     <script>
         let currentFontSize = 16;
         function changeFontSize(change) {
